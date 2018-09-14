@@ -7,8 +7,7 @@
       v-model="drawer"
       enable-resize-watcher
       fixed
-      app
-    >
+      app >
       <v-list>
         <v-list-tile
           value="true"
@@ -26,8 +25,7 @@
     </v-navigation-drawer>
     <v-toolbar
       app
-      :clipped-left="clipped"
-    >
+      :clipped-left="clipped" >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
@@ -52,8 +50,7 @@
       :right="right"
       v-model="rightDrawer"
       fixed
-      app
-    >
+      app>
       <v-list>
         <v-list-tile @click="right = !right">
           <v-list-tile-action>
@@ -79,8 +76,12 @@ export default {
       drawer: true,
       fixed: false,
       items: [{
-        icon: 'bubble_chart',
+        icon: 'menu',
         title: 'Inspire'
+      },
+      {
+        icon: 'menu',
+        title: 'Inspires'
       }],
       miniVariant: false,
       right: true,

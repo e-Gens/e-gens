@@ -697,7 +697,7 @@
     eslint-loader "^2.0.0"
     eslint-plugin-vue "^4.5.0"
 
-"@vue/cli-plugin-pwa@^3.0.1":
+"@vue/cli-plugin-pwa@^3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-3.0.3.tgz#dad0819f004ae20853dfdf4c4f75a2df0e29e861"
   dependencies:
