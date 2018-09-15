@@ -1,21 +1,46 @@
 <template>
   <spa-template>
+  <span slot="menu">
+    <v-list dense>
+        <v-list-group prepend-icon="dashboard" value="true">
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Painel Administrativo</v-list-tile-title>
+          </v-list-tile>
+        </v-list-group>
 
-    <v-list slot="menu">
-        <v-list-tile
-          value="true"
-          v-for="(item, i) in items"
-          :key="i"
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+        <v-list-group prepend-icon="account_circle" value="true">
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Users</v-list-tile-title>
+          </v-list-tile>
+  
+          <v-list-group no-action sub-group value="true">
+            <v-list-tile slot="activator">
+              <v-list-tile-title>Admin</v-list-tile-title>
+            </v-list-tile>
+  
+            <v-list-tile v-for="(admin, i) in admins" :key="i" @click="admin">
+              <v-list-tile-action>
+                <v-icon v-text="admin[1]"></v-icon>
+              </v-list-tile-action>
+              <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
+            </v-list-tile>
+          </v-list-group>
+  
+        <v-list-group sub-group no-action >
+          <v-list-tile slot="activator">
+            <v-list-tile-title>Actions</v-list-tile-title>
+          </v-list-tile>
+
+          <v-list-tile v-for="(crud, i) in cruds" :key="i" @click="crud[1]" >
+            <v-list-tile-action>
+              <v-icon v-text="crud[1]"></v-icon>
+            </v-list-tile-action>
+            <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
+          </v-list-tile>
+        </v-list-group>
+        </v-list-group>
       </v-list>
-
+  </span>
 
     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in">
@@ -34,7 +59,7 @@
   </v-container>
   
   <span slot="footer">
-    <span>&copy; e-Gens 2018</span>
+    <strong>&copy; 2018 — Desenvolvido por e-Gens</strong>
   </span>
 
   </spa-template>
@@ -49,14 +74,16 @@ export default {
   name: 'Home',
   data () {
     return {
-      items: [{
-        icon: 'dashboard',
-        title: 'Dashboard'
-      },
-      {
-        icon: 'menu',
-        title: 'Admin'
-      }],
+      admins: [
+        ['Management', 'people_outline'],
+        ['Settings', 'settings']
+      ],
+      cruds: [
+        ['Create', 'add'],
+        ['Read', 'insert_drive_file'],
+        ['Update', 'update'],
+        ['Delete', 'delete']
+      ]
     }
   },
   components: {

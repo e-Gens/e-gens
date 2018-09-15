@@ -1,36 +1,49 @@
 <template>
   <v-app>
     <!-- Barra de nevagação esquerda -->
-    <v-navigation-drawer 
+    <v-navigation-drawer stateless value="true"
         persistent
-        :mini-variant="miniVariant"
+        :mini-variant.sync="miniVariant"
         :clipped="clipped"
         v-model="drawer"
         enable-resize-watcher
         fixed
-        app >
-        <slot name="menu">
-            <!-- Itens do menu lateral esqauerdo -->
+        app
+        dense
+        accent>
+      <!-- Cabeçalho do menu lateral esquerdo -->
+      <v-toolbar dense flat class="transparent" >
+        <v-list class="pa-0">
+          <v-list-tile avatar tile @click.stop="miniVariant = !miniVariant">
+            <v-avatar tile >
+              <v-toolbar-side-icon :ripple="false">
+                  <v-img src="./img/logo/logo.png" alt="Logo Escola" contain></v-img>
+              </v-toolbar-side-icon>             
+            </v-avatar>
+            <v-toolbar-title v-text="title"></v-toolbar-title>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+      
+      <!-- Itens do menu lateral esquerdo -->
+      <slot name="menu">
         </slot>
+      
     </v-navigation-drawer>
 
     <!-- Barra Superior -->
-    <v-toolbar app :clipped-left="clipped">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+    <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
+      <v-btn icon @click.stop="drawer = !drawer">
         <v-icon>menu</v-icon>
       </v-btn>
+      <v-btn v-if="drawer" icon @click.stop="clipped = !clipped">
+        <v-icon>web</v-icon>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-list-tile-avatar v-if="!profileDrawer" @click.stop="profileDrawer = !profileDrawer">
+        <img src="https://randomuser.me/api/portraits/men/85.jpg">
+      </v-list-tile-avatar>
+      <v-toolbar-title>Usuário</v-toolbar-title>
     </v-toolbar>
 
     <!-- Conteúdo Principal -->
@@ -43,16 +56,18 @@
     <!-- Barra de navegação à direita -->
     <v-navigation-drawer
       temporary
+      height="60%"
       :right="right"
-      v-model="rightDrawer"
-      fixed
+      v-model="profileDrawer"
       app>
       <v-list>
-        <v-list-tile @click="right = !right">
+        <v-list-tile right>
           <v-list-tile-action>
-            <v-icon>compare_arrows</v-icon>
+            <v-list-tile-avatar v-if="profileDrawer" @click.stop="profileDrawer = !profileDrawer">
+              <img src="https://randomuser.me/api/portraits/men/85.jpg">
+            </v-list-tile-avatar>
           </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
+          <v-list-tile-title>Dados do Usuário</v-list-tile-title>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -67,26 +82,24 @@
 </template>
 
 <script>
-
-import GnsFooter from '@/components/elements/GnsFooter'
+import GnsFooter from "@/components/elements/GnsFooter";
 
 export default {
-  
-  name: 'SpaTemplate',
-  data () {
+  name: "SpaTemplate",
+  data() {
     return {
-      clipped: true,
+      clipped: false,
       drawer: true,
       fixed: false,
-      
+
       miniVariant: false,
       right: true,
-      rightDrawer: false,
-      title: 'e-Gens'
-    }
+      profileDrawer: false,
+      title: "e-Gens"
+    };
   },
   components: {
     GnsFooter
   }
-}
+};
 </script>
