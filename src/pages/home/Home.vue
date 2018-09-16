@@ -1,18 +1,25 @@
 <template>
   <spa-template>
-    <v-list dense color="primary" slot="menu">
-      <v-list-group prepend-icon="dashboard" value="true">
+    <v-list dense slot="menu">
+      
+      <v-list-group prepend-icon="home" value="true">
         <v-list-tile slot="activator">
           <v-list-tile-title>Painel Administrativo</v-list-tile-title>
         </v-list-tile>
       </v-list-group>
 
-      <v-list-group prepend-icon="account_circle" value="true">
+      <v-list-group prepend-icon="dashboard" >
+        <v-list-tile slot="activator">
+          <v-list-tile-title>Controle</v-list-tile-title>
+        </v-list-tile>
+      </v-list-group>
+
+      <v-list-group prepend-icon="account_circle" >
         <v-list-tile slot="activator">
           <v-list-tile-title>Users</v-list-tile-title>
         </v-list-tile>
 
-        <v-list-group no-action sub-group value="true">
+        <v-list-group no-action sub-group >
           <v-list-tile slot="activator">
             <v-list-tile-title>Admin</v-list-tile-title>
           </v-list-tile>
@@ -41,27 +48,31 @@
     </v-list>
 
     <v-spacer></v-spacer>
-    <v-list-tile slot="user-nav-data">
-      <v-list-tile>
-      <v-badge color="red" overlap>
+    <v-container center>
+      <img src="https://randomuser.me/api/portraits/men/11.jpg">
+    </v-container>
+
+    <v-toolbar-items slot="user-nav-data">
+      <v-btn flat>
+        <v-badge color="red" overlap>
         <span slot="badge">6</span>
         <v-icon medium color="grey lighten-1">assignment</v-icon>
-      </v-badge>
-      </v-list-tile>
-
-      <v-list-tile>
-      <v-badge color="purple" overlap>
+        </v-badge>
+      </v-btn>
+      <v-btn flat>
+        <v-badge color="purple" overlap>
         <span slot="badge">6</span>
         <v-icon medium color="grey">mail</v-icon>
       </v-badge>
-      </v-list-tile>
-      <v-spacer></v-spacer>
-      <v-list-tile-avatar @click.stop="profileDrawer = !profileDrawer">
-        <v-toolbar-side-icon>
+      </v-btn>
+      <v-btn flat>
+        <v-list-tile-avatar @click.stop="profileDrawer = !profileDrawer">
           <img src="https://randomuser.me/api/portraits/men/11.jpg">
-        </v-toolbar-side-icon>
-      </v-list-tile-avatar>
-    </v-list-tile>
+        </v-list-tile-avatar>
+        <small>{{ usuario }}</small>
+        <v-icon>keyboard_arrow_down</v-icon>
+      </v-btn>
+    </v-toolbar-items> 
 
     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in">
@@ -99,7 +110,8 @@ export default {
         ["Read", "insert_drive_file"],
         ["Update", "update"],
         ["Delete", "delete"]
-      ]
+      ],
+      usuario: 'José da Silva'
     };
   },
   components: {

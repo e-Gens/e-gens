@@ -9,15 +9,32 @@
         enable-resize-watcher
         fixed
         app
-        dense
-        mini-variant-width="70">
+        dense>
       <!-- Cabeçalho do menu lateral esquerdo -->
-      <v-toolbar @click.stop="miniVariant = !miniVariant" color="primary lighten-1" dark>
-        <v-toolbar-side-icon >
-          <v-icon large gray>home</v-icon>
+      <v-toolbar dense @click.stop="miniVariant = !miniVariant" color="primary lighten-1" dark>
+        <v-toolbar-side-icon>
         </v-toolbar-side-icon>
-        <v-toolbar-title v-text="client" class=".font-weight-black .font-italic"></v-toolbar-title>                   
+        
+        <v-list-tile v-if="!miniVariant">
+          <v-toolbar-side-icon @click.stop="drawer = !drawer">
+            <v-img src="./img/logo/logo-light.png" alt="Logo Escola" contain></v-img>
+          </v-toolbar-side-icon>
+          <v-list-tile>
+            <v-toolbar-title v-text="title"></v-toolbar-title>                   
+          </v-list-tile>
+        </v-list-tile>
+
       </v-toolbar>
+
+      <v-toolbar @click.stop="miniVariant = !miniVariant" v-if="!miniVariant" >
+           <v-toolbar-side-icon>
+            <v-img src="./img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+          </v-toolbar-side-icon>
+          <v-list-tile>
+            <v-toolbar-title v-text="client"></v-toolbar-title>                   
+          </v-list-tile>
+
+        </v-toolbar>
       
       <!-- Itens do menu lateral esquerdo -->
       <slot name="menu">
@@ -27,15 +44,10 @@
     </v-navigation-drawer>
 
     <!-- Barra Superior -->
-    <v-toolbar app :clipped-left="clipped" color="primary lighten-1" dark>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer">
-          <v-img src="./img/logo/logo-light.png" alt="Logo Escola" contain></v-img>
+    <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="!drawer || miniVariant">
+          <v-img src="./img/logo/logo-light.png" alt="Logo " contain></v-img>
       </v-toolbar-side-icon>
-      <v-list-tile>
-      
-       <v-toolbar-title v-text="title" class=".font-weight-black .font-italic"></v-toolbar-title>                   
-      </v-list-tile>
-
       <v-spacer></v-spacer>
         <slot name="user-nav-data">
         </slot>
