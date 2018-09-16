@@ -10,40 +10,36 @@
         fixed
         app
         dense
-        accent>
+        mini-variant-width="70">
       <!-- Cabeçalho do menu lateral esquerdo -->
-      <v-toolbar dense flat class="transparent" >
-        <v-list class="pa-0">
-          <v-list-tile avatar tile @click.stop="miniVariant = !miniVariant">
-            <v-avatar tile >
-              <v-toolbar-side-icon :ripple="false">
-                  <v-img src="./img/logo/logo.png" alt="Logo Escola" contain></v-img>
-              </v-toolbar-side-icon>             
-            </v-avatar>
-            <v-toolbar-title v-text="title"></v-toolbar-title>
-          </v-list-tile>
-        </v-list>
+      <v-toolbar @click.stop="miniVariant = !miniVariant" color="primary lighten-1" dark>
+        <v-toolbar-side-icon >
+          <v-icon large gray>home</v-icon>
+        </v-toolbar-side-icon>
+        <v-toolbar-title v-text="client" class=".font-weight-black .font-italic"></v-toolbar-title>                   
       </v-toolbar>
       
       <!-- Itens do menu lateral esquerdo -->
       <slot name="menu">
         </slot>
       
+            
     </v-navigation-drawer>
 
     <!-- Barra Superior -->
-    <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
-      <v-btn icon @click.stop="drawer = !drawer">
-        <v-icon>menu</v-icon>
-      </v-btn>
-      <v-btn v-if="drawer" icon @click.stop="clipped = !clipped">
-        <v-icon>web</v-icon>
-      </v-btn>
+    <v-toolbar app :clipped-left="clipped" color="primary lighten-1" dark>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer">
+          <v-img src="./img/logo/logo-light.png" alt="Logo Escola" contain></v-img>
+      </v-toolbar-side-icon>
+      <v-list-tile>
+      
+       <v-toolbar-title v-text="title" class=".font-weight-black .font-italic"></v-toolbar-title>                   
+      </v-list-tile>
+
       <v-spacer></v-spacer>
-      <v-list-tile-avatar v-if="!profileDrawer" @click.stop="profileDrawer = !profileDrawer">
-        <img src="https://randomuser.me/api/portraits/men/85.jpg">
-      </v-list-tile-avatar>
-      <v-toolbar-title>Usuário</v-toolbar-title>
+        <slot name="user-nav-data">
+        </slot>
+      
     </v-toolbar>
 
     <!-- Conteúdo Principal -->
@@ -64,7 +60,7 @@
         <v-list-tile right>
           <v-list-tile-action>
             <v-list-tile-avatar v-if="profileDrawer" @click.stop="profileDrawer = !profileDrawer">
-              <img src="https://randomuser.me/api/portraits/men/85.jpg">
+              <img src="https://randomuser.me/api/portraits/men/11.jpg">
             </v-list-tile-avatar>
           </v-list-tile-action>
           <v-list-tile-title>Dados do Usuário</v-list-tile-title>
@@ -88,14 +84,15 @@ export default {
   name: "SpaTemplate",
   data() {
     return {
-      clipped: false,
       drawer: true,
       fixed: false,
+      clipped: false,
 
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       profileDrawer: false,
-      title: "e-Gens"
+      title: "e-Gens",
+      client: "Nome do Cliente"
     };
   },
   components: {
