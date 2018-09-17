@@ -1,6 +1,8 @@
 <template>
   <spa-template>
-    <v-list dense slot="menu">
+
+    <gns-menu slot="menu"></gns-menu>
+    <v-list dense >
       
       <v-list-group prepend-icon="home" value="true">
         <v-list-tile slot="activator">
@@ -47,33 +49,6 @@
       </v-list-group>
     </v-list>
 
-    <v-spacer></v-spacer>
-    <v-container center>
-      <img src="https://randomuser.me/api/portraits/men/11.jpg">
-    </v-container>
-
-    <v-toolbar-items slot="user-nav-data">
-      <v-btn flat>
-        <v-badge color="red" overlap>
-        <span slot="badge">6</span>
-        <v-icon medium color="grey lighten-1">assignment</v-icon>
-        </v-badge>
-      </v-btn>
-      <v-btn flat>
-        <v-badge color="purple" overlap>
-        <span slot="badge">6</span>
-        <v-icon medium color="grey">mail</v-icon>
-      </v-badge>
-      </v-btn>
-      <v-btn flat>
-        <v-list-tile-avatar @click.stop="profileDrawer = !profileDrawer">
-          <img src="https://randomuser.me/api/portraits/men/11.jpg">
-        </v-list-tile-avatar>
-        <small>{{ usuario }}</small>
-        <v-icon>keyboard_arrow_down</v-icon>
-      </v-btn>
-    </v-toolbar-items> 
-
     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
@@ -99,11 +74,13 @@
 
 <script>
 import SpaTemplate from "@/template/SpaTemplate";
+import GnsMenu from "@/components/elements/GnsMenu";
 
 export default {
   name: "Home",
   data() {
     return {
+      
       admins: [["Management", "people_outline"], ["Settings", "settings"]],
       cruds: [
         ["Create", "add"],
@@ -115,7 +92,8 @@ export default {
     };
   },
   components: {
-    SpaTemplate
+    SpaTemplate,
+    GnsMenu
   }
 };
 </script>
