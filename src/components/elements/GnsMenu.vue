@@ -4,7 +4,7 @@
     :mini-variant="mini"
     fixed
     :dark="$vuetify.dark"
-    :clipped-left="clipped"
+    :clipped="clipped"
     app
     v-model="drawer"
     width="260"
@@ -13,13 +13,13 @@
     <span>
 
 
-    <v-toolbar dense  color="primary lighten-1" dark>
+    <v-toolbar dense  color="primary lighten-1" dark >
       <v-toolbar-side-icon @click="$emit('update:mini',mini = !mini)">
       </v-toolbar-side-icon>
       
       <v-list-tile v-if="!mini">
-        <!--v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)"-->
-        <v-toolbar-side-icon center @click.stop="$emit('update:clipped',clipped = !clipped)">
+        <v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)">
+        <!-- <v-toolbar-side-icon center @click.stop="$emit('update:clipped',clipped = !clipped)"> -->
           <v-img src="./img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
         </v-toolbar-side-icon>
         <v-list-tile>
@@ -28,7 +28,7 @@
       </v-list-tile>
     </v-toolbar>
 
-    <v-toolbar @click.stop="$emit('update:mini-variant',mini = !mini)" v-if="!clipped" >
+    <v-toolbar @click.stop="$emit('update:mini',mini = !mini)"  >
       <v-toolbar-side-icon>
         <v-img src="./img/logo/logo.png" alt="Logo Cliente" contain></v-img>
       </v-toolbar-side-icon>
@@ -114,6 +114,7 @@ export default {
     mini: true,
     drawer: true,
     clipped: false,
+
     menus: menu,
     scrollSettings: {
       maxScrollbarLength: 160
@@ -133,11 +134,10 @@ export default {
   created () {
     window.getApp.$on('APP_DRAWER_TOGGLED', () => {
       this.drawer = (!this.drawer);
-      this.mini = (!this.mini) 
-      this.clipped = (!this.clipped);
+      this.clipped = false
+      this.mini = false
     });
   },
-  
 
   methods: {
     genChildTarget (item, subItem) {
@@ -150,7 +150,10 @@ export default {
       return { name: `${item.group}/${(subItem.name)}` };
     },
     
-  }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScrollFunction);
+    }
 };
 </script>
 
@@ -162,6 +165,6 @@ export default {
   overflow: hidden
   .drawer-menu--scroll
     height: calc(100vh - 48px)
-    overflow: auto
+    overflow: none
 
 </style>

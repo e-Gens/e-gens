@@ -6,13 +6,12 @@
 
     <!-- Barra Superior -->
     <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
-      <!-- 
-      <v-toolbar-side-icon @click.stop="$emit('update:clipped',clipped = !clipped)" v-if="clipped || mini"> -->
-      <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="clipped">
+      <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="!drawer || showIcon">
           <v-img src="./img/logo/logo-light.png" alt="Logo " contain></v-img>
       </v-toolbar-side-icon>
-      <v-toolbar-title v-text="title" v-if="clipped"></v-toolbar-title>               
-
+      <v-btn icon @click="handleFullScreen()">
+        <v-icon>fullscreen</v-icon>
+      </v-btn>
       <v-spacer></v-spacer>
         
       <v-toolbar-items >
@@ -141,16 +140,27 @@ export default {
     GnsMenu,
     GnsFooter
   },
+  created () {
+  },
+  mounted () {
+    console.log(this.$vuetify.breakpoint)
+  },
   computed: {
     toolbarColor () {
       return this.$vuetify.options.extra.mainNav;
+    },
+    showIcon () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return true
+        case 'sm': return true
+        case 'md': return true
+      }
     }
-  },
-  created () {
   },
   methods: {
     handleDrawerToggle () {
       window.getApp.$emit('APP_DRAWER_TOGGLED');
+      this.drawer = !this.drawer;
     },
     handleFullScreen () {
       Util.toggleFullScreen();
