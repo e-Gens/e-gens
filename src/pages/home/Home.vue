@@ -1,7 +1,5 @@
 <template>
     <spa-template >
-
-
     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
