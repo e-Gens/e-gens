@@ -1,59 +1,17 @@
 <template>
   <v-app>
     <!-- Barra de nevagação esquerda -->
-    <v-navigation-drawer stateless value="true"
-        persistent
-        :mini-variant.sync="miniVariant"
-        :clipped="clipped"
-        v-model="drawer"
-        app
-
-        dense>
-      <!-- Cabeçalho do menu lateral esquerdo -->
-      <v-toolbar dense @click.stop="miniVariant = !miniVariant" color="primary lighten-1" dark>
-       
-        <v-toolbar-side-icon>
-        </v-toolbar-side-icon>
-        
-        <v-list-tile v-if="!miniVariant">
-          <v-toolbar-side-icon @click.stop="drawer = !drawer">
-            <v-img src="./img/logo/logo-light.png" alt="Logo Escola" contain></v-img>
-          </v-toolbar-side-icon>
-          <v-list-tile>
-            <v-toolbar-title v-text="title"></v-toolbar-title>                   
-          </v-list-tile>
-        </v-list-tile>
-
-      </v-toolbar>
-
-      <v-toolbar @click.stop="miniVariant = !miniVariant" v-if="!miniVariant" >
-           <v-toolbar-side-icon>
-            <v-img src="./img/logo/logo.png" alt="Logo Cliente" contain></v-img>
-          </v-toolbar-side-icon>
-          <v-list-tile>
-            <v-toolbar-title v-text="client"></v-toolbar-title>                   
-          </v-list-tile>
-
-        </v-toolbar>
-      
-      <!-- Itens do menu lateral esquerdo -->
-      <slot name="menu">
-        </slot>
-      
-            
-    </v-navigation-drawer>
+    <!-- Cabeçalho do menu lateral esquerdo -->
+    <gns-menu :mini.sync="mini" :clipped.sync="clipped" :drawer.sync="drawer"> </gns-menu>
 
     <!-- Barra Superior -->
     <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
-      
-
-
-
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="!drawer || miniVariant">
+      <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="!drawer || showIcon">
           <v-img src="./img/logo/logo-light.png" alt="Logo " contain></v-img>
       </v-toolbar-side-icon>
-      <v-toolbar-title v-text="client" v-if="!drawer || miniVariant"></v-toolbar-title>                   
-
+      <v-btn icon @click="handleFullScreen()">
+        <v-icon>fullscreen</v-icon>
+      </v-btn>
       <v-spacer></v-spacer>
         
       <v-toolbar-items >
@@ -152,16 +110,20 @@
 
 <script>
 import GnsFooter from "@/components/elements/GnsFooter";
-
+import GnsMenu from "@/components/elements/GnsMenu";
+import Util from '@/util';
 
 export default {
   name: "SpaTemplate",
   data() {
     return {
-      drawer: true,
+      //drawer: true,
       fixed: false,
       clipped: false,
       miniVariant: true,
+
+      mini: true,
+      drawer: true,
 
       menu: false,
       mensagens: false,
@@ -170,12 +132,39 @@ export default {
 
 
       title: "e-Gens",
-      client: "Nome do Cliente",
+      client: "Preparatório Diamantinense",
       usuario: "José da Silva"
     };
   },
   components: {
+    GnsMenu,
     GnsFooter
+  },
+  created () {
+  },
+  mounted () {
+    console.log(this.$vuetify.breakpoint)
+  },
+  computed: {
+    toolbarColor () {
+      return this.$vuetify.options.extra.mainNav;
+    },
+    showIcon () {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return true
+        case 'sm': return true
+        case 'md': return true
+      }
+    }
+  },
+  methods: {
+    handleDrawerToggle () {
+      window.getApp.$emit('APP_DRAWER_TOGGLED');
+      this.drawer = !this.drawer;
+    },
+    handleFullScreen () {
+      Util.toggleFullScreen();
+    }
   }
 };
 </script>

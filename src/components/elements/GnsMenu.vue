@@ -1,221 +1,170 @@
 <template>
-  <vue-perfect-scrollbar class="scroll-area" :settings="scrollSettings">
-          <v-list>
-              <v-list-group prepend-icon="school" no-action >
-                <v-list-tile slot="activator">
-                    <v-list-tile-content>
-                        <v-list-tile-title @click="teste">Acadêmico</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Turmas</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Matrícula</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Registro Acadêmico</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Diário de Classe</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Gestão de Professores</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Salas e Equipamentos</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </v-list-group>
-              
-              <v-list-group prepend-icon="school" no-action >
-                <v-list-tile slot="activator">
-                    <v-list-tile-content>
-                        <v-list-tile-title @click="teste">Gerencial</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Gestão de Contratos</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Gestão de Pessoas</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Gestão Financeira</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Relatórios</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Marketing e Vendas</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Qualidade e Processos</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Gestão Estratégica</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </v-list-group>
-              
-              <v-list-group prepend-icon="school"  no-action >
-                <v-list-tile slot="activator">
-                    <v-list-tile-content>
-                        <v-list-tile-title @click="teste">Financeiro</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Clientes</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Fornecedores</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Lançamentos Financeiros</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile @click="teste">
-                  <v-list-tile-content>
-                    <v-list-tile-title>Controle de Cobrança</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                
-              </v-list-group>
+  <v-navigation-drawer
+    id="appDrawer"
+    :mini-variant="mini"
+    fixed
+    :dark="$vuetify.dark"
+    :clipped="clipped"
+    app
+    v-model="drawer"
+    width="260"
+    >
+
+    <span>
 
 
-            <v-list-group
-              v-for="item in items"
-              v-model="item.active"
-              :key="item.title"
-              :prepend-icon="item.action"
-              no-action
-            >
-              <v-list-tile slot="activator">
+    <v-toolbar dense  color="primary lighten-1" dark >
+      <v-toolbar-side-icon @click="$emit('update:mini',mini = !mini)">
+      </v-toolbar-side-icon>
+      
+      <v-list-tile v-if="!mini">
+        <v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)">
+        <!-- <v-toolbar-side-icon center @click.stop="$emit('update:clipped',clipped = !clipped)"> -->
+          <v-img src="./img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
+        </v-toolbar-side-icon>
+        <v-list-tile>
+          <v-toolbar-title v-text="title"></v-toolbar-title>                 
+        </v-list-tile>
+      </v-list-tile>
+    </v-toolbar>
+
+    <v-toolbar @click.stop="$emit('update:mini',mini = !mini)"  >
+      <v-toolbar-side-icon>
+        <v-img src="./img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+      </v-toolbar-side-icon>
+      <v-list-tile v-if="!mini" >
+        <v-toolbar-title v-text="client"></v-toolbar-title>                   
+      </v-list-tile>
+    </v-toolbar>
+
+    <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
+      <v-list dense expand>
+        <template v-for="(item, i) in menus">
+            <!--group with subitems-->
+            <v-list-group v-if="item.items" :key="item.name" :group="item.group" :prepend-icon="item.icon" no-action="no-action">
+              <v-list-tile slot="activator" ripple="ripple">
                 <v-list-tile-content>
                   <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
-  
-              <v-list-tile
-                v-for="subItem in item.items"
-                :key="subItem.title"
-                @click="item.action"
-              >
-                <v-list-tile-content>
-                  <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-                </v-list-tile-content>
-  
-                <v-list-tile-action>
-                  <v-icon>{{ subItem.action }}</v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
+              <template v-for="(subItem, i) in item.items">
+                <!--sub group-->
+                <v-list-group v-if="subItem.items" :key="subItem.name" :group="subItem.group" sub-group="sub-group">
+                  <v-list-tile slot="activator" ripple="ripple">
+                    <v-list-tile-content>
+                      <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                  <v-list-tile v-for="(grand, i) in subItem.children" :key="i" :to="genChildTarget(item, grand)" :href="grand.href" ripple="ripple">
+                    <v-list-tile-content>
+                      <v-list-tile-title>{{ grand.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                  </v-list-tile>
+                </v-list-group>
+                <!--child item-->
+                <v-list-tile v-else :key="i" :to="genChildTarget(item, subItem)" :href="subItem.href" :disabled="subItem.disabled" :target="subItem.target" ripple="ripple">
+                  <v-list-tile-content>
+                    <v-list-tile-title><span>{{ subItem.title }}</span></v-list-tile-title>
+                  </v-list-tile-content>
+                  <!-- <v-circle class="white--text pa-0 circle-pill" v-if="subItem.badge" color="red" disabled="disabled">{{ subItem.badge }}</v-circle> -->
+                  <v-list-tile-action v-if="subItem.action">
+                    <v-icon :class="[subItem.actionClass || 'success--text']">{{ subItem.action }}</v-icon>
+                  </v-list-tile-action>
+                </v-list-tile>
+              </template>
             </v-list-group>
-          </v-list>
-  </vue-perfect-scrollbar>
+            <v-subheader v-else-if="item.header" :key="i">{{ item.header }}</v-subheader>
+            <v-divider v-else-if="item.divider" :key="i"></v-divider>
+            <!--top-level link-->
+            <v-list-tile v-else :to="!item.href ? { name: item.name } : null" :href="item.href" ripple="ripple" :disabled="item.disabled" :target="item.target" rel="noopener" :key="item.name">
+              <v-list-tile-action v-if="item.icon">
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+              <!-- <v-circle class="white--text pa-0 chip--x-small" v-if="item.badge" :color="item.color || 'primary'" disabled="disabled">{{ item.badge }}</v-circle> -->
+              <v-list-tile-action v-if="item.subAction">
+                <v-icon class="success--text">{{ item.subAction }}</v-icon>
+              </v-list-tile-action>
+              <!-- <v-circle class="caption blue lighten-2 white--text mx-0" v-else-if="item.chip" label="label" small="small">{{ item.chip }}</v-circle> -->
+            </v-list-tile>
+        </template>
+      </v-list>        
+    </vue-perfect-scrollbar>        
+  </span>
+  </v-navigation-drawer>
 </template>
-
-
 <script>
+import menu from '../../api/menu';
 import VuePerfectScrollbar from 'vue-perfect-scrollbar';
 
 export default {
-  name: "GnsMenu",
-  data() {
-    return {
-      active: false,
-      scrollSettings: {
-      maxScrollbarLength: 60
-    }, 
-
-      items: [
-        {
-          action: "local_activity",
-          title: "Attractions",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "restaurant",
-          title: "Dining",
-          items: [
-            { title: "Breakfast & brunch", action: "teste" },
-            { title: "New American" },
-            { title: "Sushi" }
-          ]
-        },
-        {
-          action: "school",
-          title: "Education",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "directions_run",
-          title: "Family",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "healing",
-          title: "Health",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "content_cut",
-          title: "Office",
-          items: [{ title: "List Item" }]
-        },
-        {
-          action: "local_offer",
-          title: "Promotions",
-          items: [{ title: "List Item" }]
-        }
-      ]
-    };
-  },
-  methods: {
-      teste: function(){
-          return console.log('OK!')
-      },
-      scrollHanle(evt) {
-        console.log(evt)
-    }
-  },
+  name: 'GnsMenu',
   components: {
     VuePerfectScrollbar,
-  }
+  },
+  props: {
+    expanded: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data: () => ({
+    mini: true,
+    drawer: true,
+    clipped: false,
+
+    menus: menu,
+    scrollSettings: {
+      maxScrollbarLength: 160
+    },
+    title: "e-Gens",
+    client: "Diamantinense"
+  }),
+  computed: {
+    computeGroupActive () {
+      return true;
+    },
+
+    sideToolbarColor () {
+      return this.$vuetify.options.extra.sideNav;
+    }    
+  },
+  created () {
+    window.getApp.$on('APP_DRAWER_TOGGLED', () => {
+      this.drawer = (!this.drawer);
+      this.clipped = false
+      this.mini = false
+    });
+  },
+
+  methods: {
+    genChildTarget (item, subItem) {
+      if (subItem.href) return;
+      if (subItem.component) {
+        return {
+          name: subItem.component,
+        };
+      }
+      return { name: `${item.group}/${(subItem.name)}` };
+    },
+    
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScrollFunction);
+    }
 };
 </script>
 
-<style lang="css">
-.scroll-area {
-  position: relative;
-  margin: auto;
-}
-</style> 
+
+<style lang="stylus">
+//@import '../../../node_modules/vuetify/src/stylus/settings/_elevations.styl';
+
+#appDrawer
+  overflow: hidden
+  .drawer-menu--scroll
+    height: calc(100vh - 48px)
+    overflow: none
+
+</style>
