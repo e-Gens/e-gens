@@ -3,12 +3,21 @@
   "short_name": "e-gens",
   "icons": [
     {
-      "src": "/img/icons/android-chrome-192x192.png",
+      "src": "/img/icons/favicon.svg",
+      "sizes": "16x16 36x36 48x48 72x72 96x96 144x144 192x192 512x512"
+    },
+    {
+      "src": "/img/icons/favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/favicon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/icons/android-chrome-512x512.png",
+      "src": "/img/icons/favicon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
