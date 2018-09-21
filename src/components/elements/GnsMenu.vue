@@ -16,10 +16,8 @@
     <v-toolbar dense  color="primary lighten-1" dark >
       <v-toolbar-side-icon @click="$emit('update:mini',mini = !mini)">
       </v-toolbar-side-icon>
-      
       <v-list-tile v-if="!mini">
         <v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)">
-        <!-- <v-toolbar-side-icon center @click.stop="$emit('update:clipped',clipped = !clipped)"> -->
           <v-img src="./img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
         </v-toolbar-side-icon>
         <v-list-tile>
@@ -36,6 +34,13 @@
         <v-toolbar-title v-text="client"></v-toolbar-title>                   
       </v-list-tile>
     </v-toolbar>
+
+    <v-list-tile>
+      <router-link to="/about"><v-icon>help</v-icon></router-link>
+    </v-list-tile>
+    <v-list-tile>
+      <router-link to="/"><v-icon>home</v-icon></router-link>
+    </v-list-tile>
 
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
       <v-list dense expand>
@@ -96,7 +101,7 @@
   </v-navigation-drawer>
 </template>
 <script>
-import menu from '../../api/menu';
+import menu from '@/api/menu';
 import VuePerfectScrollbar from 'vue-perfect-scrollbar';
 
 export default {

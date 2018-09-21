@@ -1,40 +1,12 @@
 const Menu =  [
   { header: 'Apps' },
   {
-    title: 'Dashboard',
-    group: 'apps',
-    icon: 'dashboard',
-    component: 'home',
-    target: '#',
-    name: 'Dashboard',
-  },
-  {
-    title: 'Chat',
-    group: 'apps',
-    icon: 'chat_bubble',
-    target: '#',
-    name: 'Chat',
-  },
-  {
-    title: 'Inbox',
-    group: 'apps',
-    name: 'Mail',
-    target: '_blank',
-    icon: 'email',
-  },
-  {
-    title: 'Media',
-    group: 'apps',
-    name: 'Media',
-    icon: 'perm_media',
-  },
-  {
     title: 'Widgets',
     group: 'widgets',
     component: 'widgets',
     icon: 'widgets',
     items: [
-      { name: 'social', title: 'Social', component: 'components/social' },
+      { name: 'home', title: 'Home', component: 'home' },
       { name: 'statistic', title: 'Statistic', badge: 'new', component: 'components/statistic' },
       { name: 'chart', title: 'Chart', component: 'components/chart' },
       { name: 'list', title: 'List', component: 'components/widget-list' },

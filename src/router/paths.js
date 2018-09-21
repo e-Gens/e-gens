@@ -1,8 +1,16 @@
 export default [
     {
+        path: '*',
+        meta: {
+            public: true,
+        },
+        redirect: {
+            path: '/404'
+        }
+    }, {
         path: '/',
         name: 'home',
-        component: () => import(/* webpackChunkName: "home" */ '@/pages/home/Home'                                                                                                                                                     )
+        component: () => import(/* webpackChunkName: "home" */ '@/pages/home/Home')
     },
     {
         path: '/about',
