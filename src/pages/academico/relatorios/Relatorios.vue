@@ -7,7 +7,7 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Home </h3>
+        <h3> Componente Relatórios </h3>
         <small>Base de exemplos</small>
       </v-layout>
     </v-slide-y-transition>
@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: "Home",
+  name: "Relatórios",
   data() {
     return {};
   },

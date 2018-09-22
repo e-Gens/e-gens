@@ -117,19 +117,15 @@ export default {
   name: "SpaTemplate",
   data() {
     return {
-      //drawer: true,
       fixed: false,
       clipped: false,
-      miniVariant: true,
-
-      mini: true,
+      mini: false,
       drawer: true,
 
       menu: false,
       mensagens: false,
       tarefas: true,
       fav: true,
-
 
       title: "e-Gens",
       client: "Preparatório Diamantinense",
@@ -143,7 +139,6 @@ export default {
   created () {
   },
   mounted () {
-    console.log(this.$vuetify.breakpoint)
   },
   computed: {
     toolbarColor () {

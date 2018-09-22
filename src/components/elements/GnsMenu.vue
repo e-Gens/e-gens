@@ -9,10 +9,6 @@
     v-model="drawer"
     width="260"
     >
-
-    <span>
-
-
     <v-toolbar dense  color="primary lighten-1" dark >
       <v-toolbar-side-icon @click="$emit('update:mini',mini = !mini)">
       </v-toolbar-side-icon>
@@ -35,12 +31,12 @@
       </v-list-tile>
     </v-toolbar>
 
-    <v-list-tile>
+<!--     <v-list-tile>
       <router-link to="/about"><v-icon>help</v-icon></router-link>
     </v-list-tile>
     <v-list-tile>
       <router-link to="/"><v-icon>home</v-icon></router-link>
-    </v-list-tile>
+    </v-list-tile> -->
 
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
       <v-list dense expand>
@@ -97,7 +93,6 @@
         </template>
       </v-list>        
     </vue-perfect-scrollbar>        
-  </span>
   </v-navigation-drawer>
 </template>
 <script>
@@ -116,13 +111,13 @@ export default {
     }
   },
   data: () => ({
-    mini: true,
+    mini: false,
     drawer: true,
     clipped: false,
 
     menus: menu,
     scrollSettings: {
-      maxScrollbarLength: 160
+      maxScrollbarLength: 140
     },
     title: "e-Gens",
     client: "Diamantinense"
