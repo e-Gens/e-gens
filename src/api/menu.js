@@ -48,7 +48,7 @@ const Menu = [
     ]
   },
   {
-    title: 'Gestão de Professores',
+    title: 'Docentes',
     group: 'gestao-professores',
     component: 'about',
     icon: 'class',
@@ -58,98 +58,222 @@ const Menu = [
   },
   { header: 'Pedagógico' },
   {
-    title: 'Planejamento Escolar',
+    title: 'Planejamento',
     group: 'components',
     component: 'components',
     icon: 'tune',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' }
+      { name: 'controle-aulas', title: 'PPP', component: 'home' },
+      { name: 'controle-aulas', title: 'Planos de Aula', component: 'home' },
+      { name: 'controle-aulas', title: 'Disciplinas', component: 'home' },
+      { name: 'controle-aulas', title: 'Grade Curricular', component: 'home' },
+      { name: 'controle-aulas', title: 'Avaliações', component: 'home' },
+      { name: 'controle-aulas', title: 'Calendário Escolar', component: 'home' },
+      { name: 'controle-aulas', title: 'Gestão de Horários', component: 'home' },
 
     ]
   },
   {
-    title: 'General',
+    title: 'Resultados',
     group: 'components',
     component: 'components',
     icon: 'tune',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' }
+      { name: 'controle-aulas', title: 'Avaliações', component: 'home' },
+      { name: 'controle-aulas', title: 'Finais', component: 'home' },
+      { name: 'controle-aulas', title: 'Atividades Extra', component: 'home' },
 
     ]
   },
   {
-    title: 'General',
+    title: 'Aval. Desempenho',
     group: 'components',
     component: 'components',
     icon: 'tune',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' }
+      { name: 'controle-aulas', title: 'Turmas', component: 'home' },
+      { name: 'controle-aulas', title: 'Alunos', component: 'home' },
+      { name: 'controle-aulas', title: 'Professores', component: 'home' },
 
     ]
   },
   {
-    title: 'General',
+    title: 'Relatórios',
     group: 'components',
     component: 'components',
     icon: 'tune',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' }
+      { name: 'controle-aulas', title: 'Ata de Resultados', component: 'home' },
 
     ]
   },
   {
-    title: 'General',
+    title: 'Ocorrências Aluno',
     group: 'components',
     component: 'components',
     icon: 'tune',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' }
+      { name: 'controle-aulas', title: 'Acompanhamento', component: 'home' },
+      { name: 'controle-aulas', title: 'Nova Ocorrência', component: 'home' },
 
     ]
   },
-
-
-
-
 
   { header: 'Gerencial' },
   {
-    title: 'Gerencial',
+    title: 'Gestão de Contratos',
     group: 'pickers',
     component: 'picker',
     icon: 'filter_vintage',
     items: [
-      { name: 'timepicker', title: 'Timepicker', component: 'pickers/timepicker' },
+      { name: 'controle-aulas', title: 'Contratos', component: 'home' },
+      { name: 'controle-aulas', title: 'Valor de Mensalidades', component: 'home' },
+      { name: 'controle-aulas', title: 'Descontos e Abatimentos', component: 'home' },
+      { name: 'controle-aulas', title: 'Juros e Multa', component: 'home' },
+      { name: 'controle-aulas', title: 'Taxas adicionais', component: 'home' },
+      { name: 'controle-aulas', title: 'Gestão de etapas', component: 'home' },
+    ]
+  },
+  {
+    title: 'Gestão de Pessoas',
+    group: 'pickers',
+    component: 'picker',
+    icon: 'filter_vintage',
+    items: [
+      { name: 'controle-aulas', title: 'Cadastros', component: 'home' },
+      { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+      { name: 'controle-aulas', title: 'Perfil do Profissional', component: 'home' },
+    ]
+  },
+  {
+    title: 'Gestão Financeira',
+    group: 'pickers',
+    component: 'picker',
+    icon: 'filter_vintage',
+    items: [
+      { name: 'controle-aulas', title: 'Planos de Contas', component: 'home' },
+      { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    ]
+  },
+  {
+    title: 'Marketing e Vendas',
+    group: 'pickers',
+    component: 'picker',
+    icon: 'filter_vintage',
+    items: [
+      { name: 'controle-aulas', title: 'Produtos e/ou Serviços', component: 'home' },
+      { name: 'controle-aulas', title: 'Análise do Mercado', component: 'home' },
+      { name: 'controle-aulas', title: 'Plano de Marketing', component: 'home' },
+    ]
+  },
+  {
+    title: 'Qual. e Pocessos',
+    group: 'pickers',
+    component: 'picker',
+    icon: 'filter_vintage',
+    items: [
+      { name: 'controle-aulas', title: '(...)', component: 'home' },
+    ]
+  },
+  {
+    title: 'Gestão Estratégica',
+    group: 'pickers',
+    component: 'picker',
+    icon: 'filter_vintage',
+    items: [
+      { name: 'controle-aulas', title: 'Premissas Gerais', component: 'home' },
+      { name: 'controle-aulas', title: 'Análise SWOT', component: 'home' },
+      { name: 'controle-aulas', title: 'Metas', component: 'home' },
+      { name: 'controle-aulas', title: 'Plano de ação', component: 'home' },
+      { name: 'controle-aulas', title: 'Resultados Consolidados', component: 'home' },
+      { name: 'controle-aulas', title: 'Gráficos e Relatórios', component: 'home' },
     ]
   },
   { header: 'Financeiro' },
   {
-    title: 'Financeiro',
+    title: 'Clientes',
     group: 'layout',
     component: 'layout',
     icon: 'view_compact',
     items: [
-      { name: 'bottom-sheets', title: 'Bottom panels', component: 'components/bottom-sheets' },
+      { name: 'controle-aulas', title: 'Controle de Contrats', component: 'home' },
+      { name: 'controle-aulas', title: 'Registro Financeiro', component: 'home' },
+      { name: 'controle-aulas', title: 'Imposto de Renda', component: 'home' },
+      { name: 'controle-aulas', title: 'Situação Financeira', component: 'home' },
+    ]
+  },
+  {
+    title: 'Fonecedores',
+    group: 'layout',
+    component: 'layout',
+    icon: 'view_compact',
+    items: [
+      { name: 'controle-aulas', title: 'Controle de Contratos', component: 'home' },
+      { name: 'controle-aulas', title: 'Histórico de Relacionamento', component: 'home' },
+      { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    ]
+  },
+  {
+    title: 'Lançamentos',
+    group: 'layout',
+    component: 'layout',
+    icon: 'view_compact',
+    items: [
+      { name: 'controle-aulas', title: 'Controle de Receitas', component: 'home' },
+      { name: 'controle-aulas', title: 'Controle de Despesas', component: 'home' },
+    ]
+  },
+  {
+    title: 'Cobranças',
+    group: 'layout',
+    component: 'layout',
+    icon: 'view_compact',
+    items: [
+      { name: 'controle-aulas', title: 'Boletos', component: 'home' },
+      { name: 'controle-aulas', title: 'Comunicação com Banco', component: 'home' },
+      { name: 'controle-aulas', title: 'Devedores', component: 'home' },
     ]
   },
   { header: 'Logística e Operações' },
   {
-    title: 'Logística e Operações',
+    title: 'Produtos',
     group: 'forms',
     component: 'forms',
     icon: 'edit',
     items: [
-      { name: 'basic', title: 'General', component: 'components/basic-forms' },
+      { name: 'controle-aulas', title: 'Registro no Sistema', component: 'home' },
+      { name: 'controle-aulas', title: 'Entrada no Estoque', component: 'home' },
+      { name: 'controle-aulas', title: 'Saida de Produto', component: 'home' },
+    ]
+  },
+  {
+    title: 'Relatórios',
+    group: 'forms',
+    component: 'forms',
+    icon: 'edit',
+    items: [
+      { name: 'controle-aulas', title: 'Estoque', component: 'home' },
+    ]
+  },
+  {
+    title: 'Salas e Recursos',
+    group: 'forms',
+    component: 'forms',
+    icon: 'edit',
+    items: [
+      { name: 'controle-aulas', title: 'Espaços', component: 'home' },
+      { name: 'controle-aulas', title: 'Equipamentos', component: 'home' },
     ]
   },
   { divider: true },
-  { header: 'Painel de Operações' },
   {
-    title: 'Pages',
+    title: 'Painel de Operações',
     group: 'extra',
     icon: 'list',
     items: [
-      { name: 'Login', title: 'Login', component: 'Login' },
+      { name: 'controle-aulas', title: 'Tarefas e Ações', component: 'home' },
+      { name: 'controle-aulas', title: 'Usuários e Permissões', component: 'home' },
+      { name: 'controle-aulas', title: 'Backup do BD', component: 'home' },
     ]
   },
 ];

@@ -7,7 +7,7 @@
     :clipped="clipped"
     app
     v-model="drawer"
-    width="260"
+    width="270"
     >
     <v-toolbar dense  color="primary lighten-1" dark >
       <v-toolbar-side-icon @click="$emit('update:mini',mini = !mini)">
@@ -31,12 +31,7 @@
       </v-list-tile>
     </v-toolbar>
 
-<!--     <v-list-tile>
-      <router-link to="/about"><v-icon>help</v-icon></router-link>
-    </v-list-tile>
-    <v-list-tile>
-      <router-link to="/"><v-icon>home</v-icon></router-link>
-    </v-list-tile> -->
+<!-- Fim da seção de cabeçalhos -->
 
     <vue-perfect-scrollbar class="drawer-menu--scroll" :settings="scrollSettings">
       <v-list dense expand>
@@ -50,7 +45,7 @@
               </v-list-tile>
               <template v-for="(subItem, i) in item.items">
                 <!--sub group-->
-                <v-list-group v-if="subItem.items" :key="subItem.name" :group="subItem.group" sub-group="sub-group">
+                <v-list-group v-if="subItem.items" :key="subItem.name" :prepend-icon="subItem.icon" :group="subItem.group" sub-group="sub-group">
                   <v-list-tile slot="activator" ripple="ripple">
                     <v-list-tile-content>
                       <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
@@ -91,7 +86,8 @@
               <!-- <v-circle class="caption blue lighten-2 white--text mx-0" v-else-if="item.chip" label="label" small="small">{{ item.chip }}</v-circle> -->
             </v-list-tile>
         </template>
-      </v-list>        
+      </v-list>
+      <v-spacer></v-spacer> 
     </vue-perfect-scrollbar>        
   </v-navigation-drawer>
 </template>
@@ -117,10 +113,10 @@ export default {
 
     menus: menu,
     scrollSettings: {
-      maxScrollbarLength: 140
+      maxScrollbarLength: 160
     },
     title: "e-Gens",
-    client: "Diamantinense"
+    client: "Cliente"
   }),
   computed: {
     computeGroupActive () {
@@ -164,7 +160,7 @@ export default {
 #appDrawer
   overflow: hidden
   .drawer-menu--scroll
-    height: calc(100vh - 48px)
+    height: calc(84vh)
     overflow: none
 
 </style>
