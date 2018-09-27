@@ -4,7 +4,7 @@ const Menu = [
     title: 'Turmas e Aulas',
     group: 'turmas-aulas',
     component: 'about',
-    icon: 'class',
+    icon: 'event_note',
     items: [
       { name: 'turmas', title: 'Turmas', component: 'turmas' },
       { name: 'aulas', title: 'Aulas', component: 'aulas' },
@@ -17,7 +17,7 @@ const Menu = [
     title: 'Matrícula',
     group: 'matriculas',
     component: 'about',
-    icon: 'class',
+    icon: 'group_add',
     items: [
       { name: 'matricula', title: 'Matrícula', component: 'home' },
       { name: 'transferencia', title: 'Transferência', component: 'about' },
@@ -29,7 +29,7 @@ const Menu = [
     title: 'Registro Acadêmico',
     group: 'registro-academico',
     component: 'about',
-    icon: 'class',
+    icon: 'layers',
     items: [
       { name: 'controle-aulas', title: 'Alunos', component: 'home' },
       { name: 'controle-aulas', title: 'Histórico Escolar', component: 'home' },
@@ -51,7 +51,7 @@ const Menu = [
     title: 'Docentes',
     group: 'gestao-professores',
     component: 'about',
-    icon: 'class',
+    icon: 'supervised_user_circle',
     items: [
       { name: 'controle-aulas', title: 'Controle de Aulas', component: 'home' },
     ]
@@ -61,7 +61,7 @@ const Menu = [
     title: 'Planejamento',
     group: 'components',
     component: 'components',
-    icon: 'tune',
+    icon: 'developer_board',
     items: [
       { name: 'controle-aulas', title: 'PPP', component: 'home' },
       { name: 'controle-aulas', title: 'Planos de Aula', component: 'home' },
@@ -77,7 +77,7 @@ const Menu = [
     title: 'Resultados',
     group: 'components',
     component: 'components',
-    icon: 'tune',
+    icon: 'bar_chart',
     items: [
       { name: 'controle-aulas', title: 'Avaliações', component: 'home' },
       { name: 'controle-aulas', title: 'Finais', component: 'home' },
@@ -89,7 +89,7 @@ const Menu = [
     title: 'Aval. Desempenho',
     group: 'components',
     component: 'components',
-    icon: 'tune',
+    icon: 'trending_up',
     items: [
       { name: 'controle-aulas', title: 'Turmas', component: 'home' },
       { name: 'controle-aulas', title: 'Alunos', component: 'home' },
@@ -101,7 +101,7 @@ const Menu = [
     title: 'Relatórios',
     group: 'components',
     component: 'components',
-    icon: 'tune',
+    icon: 'rate_review',
     items: [
       { name: 'controle-aulas', title: 'Ata de Resultados', component: 'home' },
 
@@ -111,7 +111,7 @@ const Menu = [
     title: 'Ocorrências Aluno',
     group: 'components',
     component: 'components',
-    icon: 'tune',
+    icon: 'report',
     items: [
       { name: 'controle-aulas', title: 'Acompanhamento', component: 'home' },
       { name: 'controle-aulas', title: 'Nova Ocorrência', component: 'home' },
@@ -124,7 +124,7 @@ const Menu = [
     title: 'Gestão de Contratos',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'business_center',
     items: [
       { name: 'controle-aulas', title: 'Contratos', component: 'home' },
       { name: 'controle-aulas', title: 'Valor de Mensalidades', component: 'home' },
@@ -138,7 +138,7 @@ const Menu = [
     title: 'Gestão de Pessoas',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'group',
     items: [
       { name: 'controle-aulas', title: 'Cadastros', component: 'home' },
       { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
@@ -149,7 +149,7 @@ const Menu = [
     title: 'Gestão Financeira',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'attach_money',
     items: [
       { name: 'controle-aulas', title: 'Planos de Contas', component: 'home' },
       { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
@@ -159,7 +159,7 @@ const Menu = [
     title: 'Marketing e Vendas',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'local_offer',
     items: [
       { name: 'controle-aulas', title: 'Produtos e/ou Serviços', component: 'home' },
       { name: 'controle-aulas', title: 'Análise do Mercado', component: 'home' },
@@ -170,16 +170,16 @@ const Menu = [
     title: 'Qual. e Pocessos',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'tune',
     items: [
-      { name: 'controle-aulas', title: '(...)', component: 'home' },
+      { name: 'controle-aulas', title: 'A definir...', component: 'home' },
     ]
   },
   {
     title: 'Gestão Estratégica',
     group: 'pickers',
     component: 'picker',
-    icon: 'filter_vintage',
+    icon: 'transform',
     items: [
       { name: 'controle-aulas', title: 'Premissas Gerais', component: 'home' },
       { name: 'controle-aulas', title: 'Análise SWOT', component: 'home' },
@@ -194,7 +194,7 @@ const Menu = [
     title: 'Clientes',
     group: 'layout',
     component: 'layout',
-    icon: 'view_compact',
+    icon: 'how_to_reg',
     items: [
       { name: 'controle-aulas', title: 'Controle de Contrats', component: 'home' },
       { name: 'controle-aulas', title: 'Registro Financeiro', component: 'home' },
@@ -206,7 +206,7 @@ const Menu = [
     title: 'Fonecedores',
     group: 'layout',
     component: 'layout',
-    icon: 'view_compact',
+    icon: 'shopping_basket',
     items: [
       { name: 'controle-aulas', title: 'Controle de Contratos', component: 'home' },
       { name: 'controle-aulas', title: 'Histórico de Relacionamento', component: 'home' },
@@ -217,7 +217,7 @@ const Menu = [
     title: 'Lançamentos',
     group: 'layout',
     component: 'layout',
-    icon: 'view_compact',
+    icon: 'note_add',
     items: [
       { name: 'controle-aulas', title: 'Controle de Receitas', component: 'home' },
       { name: 'controle-aulas', title: 'Controle de Despesas', component: 'home' },
@@ -227,7 +227,7 @@ const Menu = [
     title: 'Cobranças',
     group: 'layout',
     component: 'layout',
-    icon: 'view_compact',
+    icon: 'monetization_on',
     items: [
       { name: 'controle-aulas', title: 'Boletos', component: 'home' },
       { name: 'controle-aulas', title: 'Comunicação com Banco', component: 'home' },
@@ -239,7 +239,7 @@ const Menu = [
     title: 'Produtos',
     group: 'forms',
     component: 'forms',
-    icon: 'edit',
+    icon: 'shopping_cart',
     items: [
       { name: 'controle-aulas', title: 'Registro no Sistema', component: 'home' },
       { name: 'controle-aulas', title: 'Entrada no Estoque', component: 'home' },
@@ -250,7 +250,7 @@ const Menu = [
     title: 'Relatórios',
     group: 'forms',
     component: 'forms',
-    icon: 'edit',
+    icon: 'poll',
     items: [
       { name: 'controle-aulas', title: 'Estoque', component: 'home' },
     ]
@@ -259,7 +259,7 @@ const Menu = [
     title: 'Salas e Recursos',
     group: 'forms',
     component: 'forms',
-    icon: 'edit',
+    icon: 'meeting_room',
     items: [
       { name: 'controle-aulas', title: 'Espaços', component: 'home' },
       { name: 'controle-aulas', title: 'Equipamentos', component: 'home' },
@@ -269,7 +269,7 @@ const Menu = [
   {
     title: 'Painel de Operações',
     group: 'extra',
-    icon: 'list',
+    icon: 'settings',
     items: [
       { name: 'controle-aulas', title: 'Tarefas e Ações', component: 'home' },
       { name: 'controle-aulas', title: 'Usuários e Permissões', component: 'home' },
