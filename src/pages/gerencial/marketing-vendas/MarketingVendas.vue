@@ -7,12 +7,21 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Turmas </h3>
+        <h3> Componente: <strong>Marketing e Vendas</strong> </h3>
         <h2>Funcionalidades esperadas</h2>
         <ul>
-          <li>Criação e alocação de turmas</li>
-          <li>Preenchimento de turmas</li>
-          <li>Relatórios</li>
+          <li>Produtos e/ou Serviços</li>
+          <li>Análise de Mercado</li>
+          <li>Plano de Marketing</li>
+          <ul>
+            <li>Produto/serviço</li>
+            <li>Praça</li>
+            <li>Preço</li>
+            <li>Promoção</li>
+            <li>Projeção de Vendas</li>
+            <li>Resultados Consolidados</li>
+            <li>Gráficos e Relatórios</li>
+          </ul>
         </ul>
       </v-layout>
     </v-slide-y-transition>
@@ -21,7 +30,7 @@
 <script>
 
 export default {
-  name: "Turmas",
+  name: "MarketingVendas",
   data() {
     return {};
   },

@@ -7,13 +7,10 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente: <strong>Aulas</strong> </h3>
+        <h3> Componente: <strong>Qualidade e Processos</strong> </h3>
         <h2>Funcionalidades esperadas</h2>
         <ul>
-          <li>Gerenciamento das aulas</li>
-          <li>Acompanhamento de aulas</li>
-          <li>Relatórios</li>
-          <li>Informações específicas</li>
+          <li>Funcionalidades a definir ....</li>
         </ul>
       </v-layout>
     </v-slide-y-transition>
@@ -22,7 +19,7 @@
 <script>
 
 export default {
-  name: "Aulas",
+  name: "QualidadeProcessos",
   data() {
     return {};
   },

@@ -7,13 +7,13 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Aulas Extra </h3>
+        <h3> Componente: <strong>Resultado de Avaliações</strong> </h3>
         <h2>Funcionalidades esperadas</h2>
         <ul>
-          <li>Gerenciamento das aulas adicionais</li>
-          <li>Relatórios</li>
-          <li>Informações específicas</li>
-          <li>Conteúdo ministrado além da grade normal do ensino formal. Esse conteúdo será contabilizado como conteúdo extra, podendo ser uma atividade extra, monitoria, excursão, etc.</li>
+          <li>Resultados das avaliações previstas na grade normal</li>
+          <li>Consulta individual de resultados</li>
+          <li>Resultados por Turma, Período, Unidades, etc.</li>
+          <li>Relatórios e Gráficos</li>
         </ul>
       </v-layout>
     </v-slide-y-transition>
@@ -22,7 +22,7 @@
 <script>
 
 export default {
-  name: "AulasExtra",
+  name: "ResultadoAvaliacao",
   data() {
     return {};
   },
