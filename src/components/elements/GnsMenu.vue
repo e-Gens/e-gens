@@ -14,7 +14,7 @@
       </v-toolbar-side-icon>
       <v-list-tile v-if="!mini">
         <v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)">
-          <v-img src="./img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
+          <v-img src="/img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
         </v-toolbar-side-icon>
         <v-list-tile>
           <v-toolbar-title v-text="title"></v-toolbar-title>                 
@@ -24,7 +24,7 @@
 
     <v-toolbar @click.stop="$emit('update:mini',mini = !mini)"  >
       <v-toolbar-side-icon>
-        <v-img src="./img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+        <v-img src="/img/logo/logo.png" alt="Logo Cliente" contain></v-img>
       </v-toolbar-side-icon>
       <v-list-tile v-if="!mini" >
         <v-toolbar-title v-text="client"></v-toolbar-title>                   
@@ -38,7 +38,7 @@
         <template v-for="(item, i) in menus">
             <!--group with subitems-->
             <v-list-group v-if="item.items" :key="item.name" :group="item.group" :prepend-icon="item.icon" no-action="no-action">
-              <v-list-tile slot="activator" ripple="ripple">
+              <v-list-tile slot="activator" ripple="ripple" >
                 <v-list-tile-content>
                   <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                 </v-list-tile-content>

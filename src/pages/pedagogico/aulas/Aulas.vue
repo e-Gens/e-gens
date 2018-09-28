@@ -7,8 +7,14 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Grupo Acadêmico </h3>
-        <small>Componente raiz</small>
+        <h3> Componente: <strong>Aulas</strong> </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Gerenciamento das aulas</li>
+          <li>Acompanhamento de aulas</li>
+          <li>Relatórios</li>
+          <li>Informações específicas</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +22,7 @@
 <script>
 
 export default {
-  name: "Academico",
+  name: "Aulas",
   data() {
     return {};
   },

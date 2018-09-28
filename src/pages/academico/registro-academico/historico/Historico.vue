@@ -7,8 +7,13 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Turmas </h3>
-        <small>Base de exemplos</small>
+        <h3> Componente Historico </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Controle de expedição de histórico escolar</li>
+          <li>Geração de histórico em massa</li>
+          <li>Relatórios</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +21,7 @@
 <script>
 
 export default {
-  name: "Turmas",
+  name: "Historico",
   data() {
     return {};
   },

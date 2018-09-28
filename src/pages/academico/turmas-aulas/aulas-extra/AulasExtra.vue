@@ -7,8 +7,14 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Relatórios </h3>
-        <small>Base de exemplos</small>
+        <h3> Componente Aulas Extra </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Gerenciamento das aulas adicionais</li>
+          <li>Relatórios</li>
+          <li>Informações específicas</li>
+          <li>Conteúdo ministrado além da grade normal do ensino formal. Esse conteúdo será contabilizado como conteúdo extra, podendo ser uma atividade extra, monitoria, excursão, etc.</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +22,7 @@
 <script>
 
 export default {
-  name: "Relatórios",
+  name: "AulasExtra",
   data() {
     return {};
   },

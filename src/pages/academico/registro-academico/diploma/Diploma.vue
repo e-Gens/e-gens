@@ -7,8 +7,14 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Substituições </h3>
-        <small>Base de exemplos</small>
+        <h3> Componente Diploma </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Expedição de Diplomas intempestivos</li>
+          <li>Emissão de Diplomas em massa</li>
+          <li>Emissão de demais certificados</li>
+          <li>Geração de relatórios</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +22,7 @@
 <script>
 
 export default {
-  name: "Substituições",
+  name: "Diploma",
   data() {
     return {};
   },

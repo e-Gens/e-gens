@@ -7,8 +7,13 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Grupo Acadêmico </h3>
-        <small>Componente raiz</small>
+        <h3> Componente: <strong>Desistencia</strong> </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Registro de desistência</li>
+          <li>Cancelamento de contrato com possibilidade de geração de cobrança incluída</li>
+          <li>Relatórios</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +21,7 @@
 <script>
 
 export default {
-  name: "Academico",
+  name: "Desistencia",
   data() {
     return {};
   },

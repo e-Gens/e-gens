@@ -7,8 +7,8 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Componente Aulas Extra </h3>
-        <small>Base de exemplos</small>
+        <h3> Grupo Acadêmico/Matricula </h3>
+        <small>Componente de grupo</small>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: "AulasExtra",
+  name: "Matricula",
   data() {
     return {};
   },

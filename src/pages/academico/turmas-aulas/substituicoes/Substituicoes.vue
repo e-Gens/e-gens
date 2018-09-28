@@ -7,8 +7,15 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Grupo Acadêmico </h3>
-        <small>Componente raiz</small>
+        <h3> Componente Substituições </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Gerenciamento de alterações em agendamento de aulas</li>
+          <li>Registro e acompanhamento de substituições</li>
+          <li>Agenda com informações sobre substituições</li>
+          <li>Relatórios de aulas ministradas</li>
+          <li>Relatórios de substituições e saldo de horas</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +23,7 @@
 <script>
 
 export default {
-  name: "Academico",
+  name: "Substituições",
   data() {
     return {};
   },

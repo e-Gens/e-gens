@@ -3,45 +3,43 @@ const Menu = [
   {
     title: 'Turmas e Aulas',
     group: 'turmas-aulas',
-    component: 'about',
+    component: 'turmas-aulas',
     icon: 'event_note',
     items: [
       { name: 'turmas', title: 'Turmas', component: 'turmas' },
       { name: 'aulas', title: 'Aulas', component: 'aulas' },
       { name: 'substituicoes', title: 'Substituições', component: 'substituicoes' },
-      { name: 'relatorios', title: 'Relatórios', component: 'relatorios' },
       { name: 'aulas-extra', title: 'Aulas Extra', component: 'aulas-extra' },
     ]
   },
   {
     title: 'Matrícula',
-    group: 'matriculas',
-    component: 'about',
+    group: 'matricula',
+    component: 'matricula',
     icon: 'group_add',
     items: [
-      { name: 'matricula', title: 'Matrícula', component: 'home' },
-      { name: 'transferencia', title: 'Transferência', component: 'about' },
-      { name: 'rematricula', title: 'Rematrícula', component: 'home' },
-      { name: 'desistencia', title: 'Desistência', component: 'about' },
+      { name: 'matricula', title: 'Matrícula', component: 'matricula' },
+      { name: 'transferencia', title: 'Transferência', component: 'transferencia' },
+      { name: 'rematricula', title: 'Rematrícula', component: 'rematricula' },
+      { name: 'desistencia', title: 'Desistência', component: 'desistencia' },
     ]
   },
   {
     title: 'Registro Acadêmico',
     group: 'registro-academico',
-    component: 'about',
+    component: 'registro-academico',
     icon: 'layers',
     items: [
-      { name: 'controle-aulas', title: 'Alunos', component: 'home' },
-      { name: 'controle-aulas', title: 'Histórico Escolar', component: 'home' },
-      { name: 'controle-aulas', title: 'Ficha do Aluno', component: 'home' },
-      { name: 'controle-aulas', title: 'Diplomas', component: 'home' },
-      { name: 'controle-aulas', title: 'Listas e Relatórios', component: 'home' },
+      { name: 'aluno', title: 'Aluno', component: 'aluno' },
+      { name: 'historico', title: 'Histórico Escolar', component: 'historico' },
+      { name: 'diploma', title: 'Diploma', component: 'diploma' },
+      { name: 'listas-relatorios', title: 'Listas e Relatórios', component: 'listas-relatorios' },
     ]
   },
   {
     title: 'Diário de Classe',
     group: 'diario-classe',
-    component: 'about',
+    component: 'diario-classe',
     icon: 'class',
     items: [
       { name: 'controle-aulas', title: 'Controle de Aulas', component: 'home' },
@@ -50,7 +48,7 @@ const Menu = [
   {
     title: 'Docentes',
     group: 'gestao-professores',
-    component: 'about',
+    component: 'gestao-professores',
     icon: 'supervised_user_circle',
     items: [
       { name: 'controle-aulas', title: 'Controle de Aulas', component: 'home' },

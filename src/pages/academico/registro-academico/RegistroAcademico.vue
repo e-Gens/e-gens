@@ -7,8 +7,8 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Grupo Acadêmico </h3>
-        <small>Componente raiz</small>
+        <h3> Grupo Acadêmico/RegistroAcademico </h3>
+        <small>Componente de grupo</small>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: "Academico",
+  name: "RegistroAcademico",
   data() {
     return {};
   },

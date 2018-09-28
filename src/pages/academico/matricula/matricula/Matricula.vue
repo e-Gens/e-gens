@@ -7,8 +7,13 @@
         <blockquote>
           &#8220;Protótipo para simples demonstração&#8221;
         </blockquote>
-        <h3> Grupo Acadêmico </h3>
-        <small>Componente raiz</small>
+        <h3> Componente Matricula </h3>
+        <h2>Funcionalidades esperadas</h2>
+        <ul>
+          <li>Gerenciamento de matrícula</li>
+          <li>A matrícula também poderá ser preenchida via api em site externo pelo aluno ou responsável</li>
+          <li>A secretaria poderá confirmar a matrícula</li>
+        </ul>
       </v-layout>
     </v-slide-y-transition>
 </template>
@@ -16,7 +21,7 @@
 <script>
 
 export default {
-  name: "Academico",
+  name: "Matricula",
   data() {
     return {};
   },
