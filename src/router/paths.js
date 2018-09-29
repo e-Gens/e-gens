@@ -30,6 +30,14 @@ export default [
         ),
     },
     {
+        path: '/tarefas',
+        name: 'tarefa',
+        component: () => import(
+            /* webpackChunkName: "tarefa" */
+            '@/pages/tarefa/Tarefa'
+        ),
+    },
+    {
         path: '/academico/turmas-aulas',
         name: 'turmas-aulas/',
         component: () => import(
@@ -400,6 +408,145 @@ export default [
         component: () => import(
             /* webpackChunkName: "gestao-estrategica" */
             '@/pages/gerencial/gestao-estrategica/GestaoEstrategica'
+        ),
+    },
+
+    {
+        path: '/financeiro',
+        name: 'financeiro',
+        component: () => import(
+            /* webpackChunkName: "financeiro" */
+            '@/pages/financeiro/Financeiro'
+        ),
+    },
+    {
+        path: '/financeiro/lancamentos',
+        name: 'lancamento',
+        component: () => import(
+            /* webpackChunkName: "lancamento" */
+            '@/pages/financeiro/lancamento/Lancamento'
+        ),
+    },
+    {
+        path: '/financeiro/cobranca',
+        name: 'cobranca',
+        component: () => import(
+            /* webpackChunkName: "cobranca" */
+            '@/pages/financeiro/cobranca/Cobranca'
+        ),
+    },
+    {
+        path: '/financeiro/cobranca/boleto',
+        name: 'boleto',
+        component: () => import(
+            /* webpackChunkName: "boleto" */
+            '@/pages/financeiro/cobranca/boleto/Boleto'
+        ),
+    },
+    {
+        path: '/financeiro/cobranca/remessa',
+        name: 'remessa',
+        component: () => import(
+            /* webpackChunkName: "remessa" */
+            '@/pages/financeiro/cobranca/remessa/Remessa'
+        ),
+    },
+    {
+        path: '/financeiro/cobranca/devedor',
+        name: 'devedor',
+        component: () => import(
+            /* webpackChunkName: "devedor" */
+            '@/pages/financeiro/cobranca/devedor/Devedor'
+        ),
+    },
+    {
+        path: '/financeiro/cliente',
+        name: 'cliente',
+        component: () => import(
+            /* webpackChunkName: "cliente" */
+            '@/pages/financeiro/cliente/Cliente'
+        ),
+    },
+    {
+        path: '/financeiro/fornecedor',
+        name: 'fornecedor',
+        component: () => import(
+            /* webpackChunkName: "fornecedor" */
+            '@/pages/financeiro/fornecedor/Fornecedor'
+        ),
+    },
+
+    {
+        path: '/logistica',
+        name: 'logistica',
+        component: () => import(
+            /* webpackChunkName: "logistica" */
+            '@/pages/logistica/Logistica'
+        ),
+    },
+    {
+        path: '/logistica/produto',
+        name: 'produto',
+        component: () => import(
+            /* webpackChunkName: "produto" */
+            '@/pages/logistica/produto/Produto'
+        ),
+    },
+    {
+        path: '/logistica/estoque',
+        name: 'estoque',
+        component: () => import(
+            /* webpackChunkName: "estoque" */
+            '@/pages/logistica/estoque/Estoque'
+        ),
+    },
+    {
+        path: '/logistica/recurso',
+        name: 'recurso',
+        component: () => import(
+            /* webpackChunkName: "recurso" */
+            '@/pages/logistica/recurso/Recurso'
+        ),
+    },
+    {
+        path: '/logistica/recurso/sala',
+        name: 'sala',
+        component: () => import(
+            /* webpackChunkName: "sala" */
+            '@/pages/logistica/recurso/sala/Sala'
+        ),
+    },
+    {
+        path: '/logistica/recurso/equipamento',
+        name: 'equipamento',
+        component: () => import(
+            /* webpackChunkName: "equipamento" */
+            '@/pages/logistica/recurso/equipamento/Equipamento'
+        ),
+    },
+
+    {
+        path: '/operacional',
+        name: 'operacional',
+        component: () => import(
+            /* webpackChunkName: "operacional" */
+            '@/pages/operacional/Operacional'
+        ),
+    },
+    {
+        path: '/operacional/usuario',
+        name: 'usuario',
+        component: () => import(
+            /* webpackChunkName: "usuario" */
+            '@/pages/operacional/usuario/Usuario'
+        ),
+    },
+    {
+        path: '/operacional/base-dados',
+        name: 'base-dados',
+        component: () => import(
+            /* webpackChunkName: "base-dados" */
+            '@/pages/operacional/base-dados/BaseDados'
         ),
     },
 ]

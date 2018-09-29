@@ -15,12 +15,12 @@
       <v-spacer></v-spacer>
         
       <v-toolbar-items >
-      <v-btn icon>
-        <v-badge color="red" overlap v-model="tarefas">
-        <span slot="badge">2</span>
-        <v-icon medium >assignment</v-icon>
-        </v-badge>
-      </v-btn>
+        <v-btn :to="{name: 'tarefa'}" icon>
+          <v-badge color="red" overlap v-model="tarefas">
+          <span slot="badge">2</span>
+          <v-icon medium >assignment</v-icon>
+          </v-badge>
+        </v-btn>
       <v-btn icon>
         <v-badge color="purple" overlap v-model="mensagens">
         <span slot="badge">3</span>
@@ -79,7 +79,6 @@
               <v-list-tile-title>Habilitar tarefas</v-list-tile-title>
             </v-list-tile>
           </v-list>
-  
           <v-card-actions>
             <v-spacer></v-spacer>
   

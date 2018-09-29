@@ -116,7 +116,7 @@ export default {
       maxScrollbarLength: 160
     },
     title: "e-Gens",
-    client: "Cliente"
+    client: "Nome do Cliente"
   }),
   computed: {
     computeGroupActive () {

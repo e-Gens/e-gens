@@ -187,89 +187,94 @@ const Menu = [
   },
   { header: 'Financeiro' },
   {
-    title: 'Clientes',
-    group: 'layout',
-    component: 'layout',
-    icon: 'how_to_reg',
-    items: [
-      { name: 'controle-aulas', title: 'Controle de Contratos', component: 'home' },
-      { name: 'controle-aulas', title: 'Registro Financeiro', component: 'home' },
-      { name: 'controle-aulas', title: 'Imposto de Renda', component: 'home' },
-      { name: 'controle-aulas', title: 'Situação Financeira', component: 'home' },
-    ]
-  },
-  {
-    title: 'Fonecedores',
-    group: 'layout',
-    component: 'layout',
-    icon: 'shopping_basket',
-    items: [
-      { name: 'controle-aulas', title: 'Controle de Contratos', component: 'home' },
-      { name: 'controle-aulas', title: 'Histórico de Relacionamento', component: 'home' },
-      { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
-    ]
-  },
-  {
     title: 'Lançamentos',
-    group: 'layout',
-    component: 'layout',
+    group: 'lancamento',
+    name: 'lancamento',
+    component: 'lancamento',
     icon: 'note_add',
-    items: [
-      { name: 'controle-aulas', title: 'Controle de Receitas', component: 'home' },
-      { name: 'controle-aulas', title: 'Controle de Despesas', component: 'home' },
-    ]
+    // items: [
+    //   { name: 'controle-aulas', title: 'Controle de Receitas', component: 'home' },
+    //   { name: 'controle-aulas', title: 'Controle de Despesas', component: 'home' },
+    // ]
   },
   {
     title: 'Cobranças',
-    group: 'layout',
-    component: 'layout',
+    group: 'cobranca',
+    component: 'cobranca',
     icon: 'monetization_on',
     items: [
-      { name: 'controle-aulas', title: 'Boletos', component: 'home' },
-      { name: 'controle-aulas', title: 'Comunicação com Banco', component: 'home' },
-      { name: 'controle-aulas', title: 'Devedores', component: 'home' },
+      { name: 'boleto', title: 'Boletos', component: 'boleto' },
+      { name: 'remessa', title: 'Comunicação com Banco', component: 'remessa' },
+      { name: 'devedor', title: 'Devedores', component: 'devedor' },
     ]
   },
-  { header: 'Logística e Operações' },
+  {
+    title: 'Clientes',
+    group: 'cliente',
+    name: 'cliente',
+    component: 'cliente',
+    icon: 'how_to_reg',
+    // items: [
+    //   { name: 'cliente', title: 'Gestão de Clientes', component: 'cliente' },
+    //   { name: 'controle-aulas', title: 'Imposto de Renda', component: 'home' },
+    //   { name: 'registro-financeiro', title: 'Registro Financeiro', component: 'registro-financeiro' },
+    //   { name: 'controle-aulas', title: 'Situação Financeira', component: 'home' },
+    // ]
+  },
+  {
+    title: 'Fornecedores',
+    group: 'fornecedor',
+    name: 'fornecedor',
+    component: 'fornecedor',
+    icon: 'shopping_basket',
+    // items: [
+    //   { name: 'fonecedores', title: 'Gestão de Fornecedores', component: 'fonecedores' },
+    //   { name: 'relacionamento', title: 'Histórico de Relacionamento', component: 'relacionamento' },
+    //   { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    // ]
+  },
+  { header: 'Logística' },
   {
     title: 'Produtos',
-    group: 'forms',
-    component: 'forms',
+    group: 'produto',
+    name: 'produto',
+    component: 'produto',
     icon: 'shopping_cart',
-    items: [
-      { name: 'controle-aulas', title: 'Registro no Sistema', component: 'home' },
-      { name: 'controle-aulas', title: 'Entrada no Estoque', component: 'home' },
-      { name: 'controle-aulas', title: 'Saida de Produto', component: 'home' },
-    ]
+    // items: [
+    //   { name: 'produto', title: 'Gestão de Produtos', component: 'produto' },
+    //   { name: 'saida-produto', title: 'Saida de Produto', component: 'saida-produto' },
+    // ]
   },
   {
-    title: 'Relatórios',
-    group: 'forms',
-    component: 'forms',
+    title: 'Estoque',
+    group: 'estoque',
+    component: 'estoque',
     icon: 'poll',
-    items: [
-      { name: 'controle-aulas', title: 'Estoque', component: 'home' },
-    ]
+    // items: [
+    //   { name: 'controle-aulas', title: 'Estoque', component: 'home' },
+    //   { name: 'lancamento-estoque', title: 'Lançamento no Estoque', component: 'lancamento-estoque' },    
+    // ]
   },
   {
-    title: 'Salas e Recursos',
-    group: 'forms',
-    component: 'forms',
+    title: 'Reserva de Recursos',
+    group: 'recurso',
+    component: 'recurso',
     icon: 'meeting_room',
     items: [
-      { name: 'controle-aulas', title: 'Espaços', component: 'home' },
-      { name: 'controle-aulas', title: 'Equipamentos', component: 'home' },
+      { name: 'sala', title: 'Salas', component: 'sala' },
+      { name: 'equipamento', title: 'Equipamentos', component: 'equipamento' },
     ]
   },
   { divider: true },
   {
     title: 'Painel de Operações',
-    group: 'extra',
+    group: 'operacional',
+    component: 'operacional',
     icon: 'settings',
     items: [
-      { name: 'controle-aulas', title: 'Tarefas e Ações', component: 'home' },
-      { name: 'controle-aulas', title: 'Usuários e Permissões', component: 'home' },
-      { name: 'controle-aulas', title: 'Backup do BD', component: 'home' },
+    // para outro lugar?  { name: 'controle-aulas', title: 'Tarefas e Ações', component: 'home' },
+      { name: 'usuario', title: 'Usuários e Permissões', component: 'usuario' },
+      { name: 'base-dados', title: 'Backup do BD', component: 'base-dados' },
     ]
   },
 ];
