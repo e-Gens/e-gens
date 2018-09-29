@@ -7,7 +7,7 @@
     <!-- Barra Superior -->
     <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
       <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="!drawer || showIcon">
-          <v-img src="./img/logo/logo-light.png" alt="Logo " contain></v-img>
+          <v-img src="/img/logo/logo-light.png" alt="Logo " contain></v-img>
       </v-toolbar-side-icon>
       <v-btn icon @click="handleFullScreen()">
         <v-icon>fullscreen</v-icon>
@@ -15,12 +15,12 @@
       <v-spacer></v-spacer>
         
       <v-toolbar-items >
-      <v-btn icon>
-        <v-badge color="red" overlap v-model="tarefas">
-        <span slot="badge">2</span>
-        <v-icon medium >assignment</v-icon>
-        </v-badge>
-      </v-btn>
+        <v-btn :to="{name: 'tarefa'}" icon>
+          <v-badge color="red" overlap v-model="tarefas">
+          <span slot="badge">2</span>
+          <v-icon medium >assignment</v-icon>
+          </v-badge>
+        </v-btn>
       <v-btn icon>
         <v-badge color="purple" overlap v-model="mensagens">
         <span slot="badge">3</span>
@@ -79,7 +79,6 @@
               <v-list-tile-title>Habilitar tarefas</v-list-tile-title>
             </v-list-tile>
           </v-list>
-  
           <v-card-actions>
             <v-spacer></v-spacer>
   
@@ -117,19 +116,15 @@ export default {
   name: "SpaTemplate",
   data() {
     return {
-      //drawer: true,
       fixed: false,
       clipped: false,
-      miniVariant: true,
-
-      mini: true,
+      mini: false,
       drawer: true,
 
       menu: false,
       mensagens: false,
       tarefas: true,
       fav: true,
-
 
       title: "e-Gens",
       client: "Preparatório Diamantinense",
@@ -143,7 +138,6 @@ export default {
   created () {
   },
   mounted () {
-    console.log(this.$vuetify.breakpoint)
   },
   computed: {
     toolbarColor () {
