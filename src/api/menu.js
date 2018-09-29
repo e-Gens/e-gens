@@ -1,128 +1,280 @@
-const Menu =  [
-  { header: 'Apps' },
+const Menu = [
+  { header: 'Acadêmico' },
   {
-    title: 'Dashboard',
-    group: 'apps',
-    icon: 'dashboard',
-    component: 'home',
-    target: '#',
-    name: 'Dashboard',
-  },
-  {
-    title: 'Chat',
-    group: 'apps',
-    icon: 'chat_bubble',
-    target: '#',
-    name: 'Chat',
-  },
-  {
-    title: 'Inbox',
-    group: 'apps',
-    name: 'Mail',
-    target: '_blank',
-    icon: 'email',
-  },
-  {
-    title: 'Media',
-    group: 'apps',
-    name: 'Media',
-    icon: 'perm_media',
-  },
-  {
-    title: 'Widgets',
-    group: 'widgets',
-    component: 'widgets',
-    icon: 'widgets',
+    title: 'Turmas e Aulas',
+    group: 'turmas-aulas',
+    component: 'turmas-aulas',
+    icon: 'event_note',
     items: [
-      { name: 'social', title: 'Social', component: 'components/social' },
-      { name: 'statistic', title: 'Statistic', badge: 'new', component: 'components/statistic' },
-      { name: 'chart', title: 'Chart', component: 'components/chart' },
-      { name: 'list', title: 'List', component: 'components/widget-list' },
-      // { name: 'post', title: 'Post', component: 'components/widget-post' },
+      { name: 'turmas', title: 'Turmas', component: 'turmas' },
+      { name: 'aulas', title: 'Aulas', component: 'aulas' },
+      { name: 'substituicoes', title: 'Substituições', component: 'substituicoes' },
+      { name: 'aulas-extra', title: 'Aulas Extra', component: 'aulas-extra' },
     ]
-  },  
-  { header: 'UI Elements' },
+  },
   {
-    title: 'General',
-    group: 'components',
-    component: 'components',
+    title: 'Matrícula',
+    group: 'matricula',
+    component: 'matricula',
+    icon: 'group_add',
+    items: [
+      { name: 'matricula', title: 'Matrícula', component: 'matricula' },
+      { name: 'transferencia', title: 'Transferência', component: 'transferencia' },
+      { name: 'rematricula', title: 'Rematrícula', component: 'rematricula' },
+      { name: 'desistencia', title: 'Desistência', component: 'desistencia' },
+    ]
+  },
+  {
+    title: 'Registro Acadêmico',
+    group: 'registro-academico',
+    component: 'registro-academico',
+    icon: 'layers',
+    items: [
+      { name: 'aluno', title: 'Aluno', component: 'aluno' },
+      { name: 'historico', title: 'Histórico Escolar', component: 'historico' },
+      { name: 'diploma', title: 'Diploma', component: 'diploma' },
+      { name: 'listas-relatorios', title: 'Listas e Relatórios', component: 'listas-relatorios' },
+    ]
+  },
+  {
+    title: 'Diário de Classe',
+    group: 'diario-classe',
+    name: 'diario-classe',
+    component: 'diario-classe',
+    icon: 'class'
+  },
+  {
+    title: 'Docente',
+    group: 'docente',
+    name: 'docente',
+    component: 'docente',
+    icon: 'supervised_user_circle',
+  },
+  {
+    title: 'Frequência',
+    group: 'frequencia',
+    name: 'frequencia',
+    component: 'frequencia',
+    icon: 'assignment_turned_in',
+  },
+  { header: 'Pedagógico' },
+  {
+    title: 'Planejamento',
+    group: 'planejamento',
+    component: 'planejamento',
+    icon: 'developer_board',
+    items: [
+      { name: 'avaliacao', title: 'Avaliações', component: 'avaliacao' },
+      { name: 'calendario-escolar', title: 'Calendário Escolar', component: 'calendario-escolar' },
+      { name: 'curso', title: 'Cursos', component: 'curso' },
+      { name: 'disciplina', title: 'Disciplinas', component: 'disciplina' },
+      { name: 'horario', title: 'Gestão de Horários', component: 'horario' },
+
+    ]
+  },
+  {
+    title: 'Resultados',
+    group: 'resultado',
+    component: 'resultado',
+    icon: 'bar_chart',
+    items: [
+      { name: 'resultado-avaliacao', title: 'Avaliações', component: 'resultado-avaliacao' },
+      { name: 'resultado-final', title: 'Finais', component: 'resultado-final' },
+      { name: 'resultado-extra', title: 'Atividades Extra', component: 'resultado-extra' },
+
+    ]
+  },
+  {
+    title: 'Desempenho',
+    group: 'desempenho',
+    component: 'desempenho',
+    icon: 'trending_up',
+    items: [
+      { name: 'desempenho-turma', title: 'Turmas', component: 'desempenho-turma' },
+      { name: 'desempenho-aluno', title: 'Alunos', component: 'desempenho-aluno' },
+      { name: 'desempenho-professor', title: 'Professores', component: 'desempenho-professor' },
+
+    ]
+  },
+  {
+    title: 'Relatórios',
+    group: 'relatorios-pedagogico',
+    name: 'relatorios-pedagogico',
+    component: 'relatorios-pedagogico',
+    icon: 'rate_review'
+  },
+  {
+    title: 'Ocorrências Aluno',
+    group: 'ocorrencia',
+    name: 'ocorrencia',
+    component: 'ocorrencia',
+    icon: 'report'
+  },
+
+  { header: 'Gerencial' },
+  {
+    title: 'Gestão de Contratos',
+    group: 'contrato',
+    component: 'contrato',
+    icon: 'business_center',
+    items: [
+      { name: 'contrato', title: 'Contratos', component: 'contrato' },
+      { name: 'mensalidade', title: 'Valor de Mensalidades', component: 'mensalidade' },
+      { name: 'desconto-abatimento', title: 'Descontos e Abatimentos', component: 'desconto-abatimento' },
+      { name: 'juro-multa', title: 'Juros e Multa', component: 'juro-multa' },
+      { name: 'taxa-adicional', title: 'Taxas adicionais', component: 'taxa-adicional' },
+    ]
+  },
+  {
+    title: 'Gestão de Pessoas',
+    group: 'gestao-pessoas',
+    name: 'gestao-pessoas',
+    component: 'gestao-pessoas',
+    icon: 'group',
+    //items: [
+    //  { name: 'controle-aulas', title: 'Cadastros', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Perfil do Profissional', component: 'home' },
+    //]
+  },
+  {
+    title: 'Gestão Financeira',
+    group: 'gestao-financeira',
+    name: 'gestao-financeira',
+    component: 'gestao-financeira',
+    icon: 'attach_money',
+    //items: [
+    //  { name: 'controle-aulas', title: 'Planos de Contas', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    //]
+  },
+  {
+    title: 'Marketing e Vendas',
+    group: 'marketing-vendas',
+    name: 'marketing-vendas',
+    component: 'marketing-vendas',
+    icon: 'local_offer',
+    //items: [
+    //  { name: 'controle-aulas', title: 'Produtos e/ou Serviços', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Análise do Mercado', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Plano de Marketing', component: 'home' },
+    //]
+  },
+  {
+    title: 'Qualidade e Pocessos',
+    group: 'qualidade-processos',
+    name: 'qualidade-processos',
+    component: 'qualidade-processos',
     icon: 'tune',
+    //items: [
+    //  { name: 'controle-aulas', title: 'A definir...', component: 'home' },
+    //]
+  },
+  {
+    title: 'Gestão Estratégica',
+    group: 'gestao-estrategica',
+    name: 'gestao-estrategica',
+    component: 'gestao-estrategica',
+    icon: 'transform',
+    //items: [
+    //  { name: 'controle-aulas', title: 'Premissas Gerais', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Análise SWOT', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Metas', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Plano de ação', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Resultados Consolidados', component: 'home' },
+    //  { name: 'controle-aulas', title: 'Gráficos e Relatórios', component: 'home' },
+    //]
+  },
+  { header: 'Financeiro' },
+  {
+    title: 'Lançamentos',
+    group: 'lancamento',
+    name: 'lancamento',
+    component: 'lancamento',
+    icon: 'note_add',
+    // items: [
+    //   { name: 'controle-aulas', title: 'Controle de Receitas', component: 'home' },
+    //   { name: 'controle-aulas', title: 'Controle de Despesas', component: 'home' },
+    // ]
+  },
+  {
+    title: 'Cobranças',
+    group: 'cobranca',
+    component: 'cobranca',
+    icon: 'monetization_on',
     items: [
-      { name: 'alerts', title: 'Alerts', component: 'components/alerts' },
-      { name: 'avatars', title: 'Avatars', component: 'components/avatars' },
-      { name: 'badges', title: 'Badges', component: 'components/badges' },
-      { name: 'buttons', title: 'Buttons', component: 'components/buttons' },
-      { name: 'cards', title: 'Cards', component: 'components/cards' },
-      { name: 'carousels', title: 'Carousels', component: 'components/carousels' },
-      { name: 'chips', title: 'Chips', component: 'components/chips' },
-      { name: 'dialogs', title: 'Dialogs', component: 'components/dialogs' },
-      { name: 'icons', title: 'Icons', component: 'components/icons' },
-      { name: 'tables', title: 'Data Tables', component: 'components/tables' },
-      { name: 'parallax', title: 'Parallax  image', component: 'components/parallax' },
-      { name: 'snackbar', title: 'Snackbar', component: 'components/snackbar' },
-      { name: 'progress', title: 'Progress', component: 'components/progress' },      
-      { name: 'slider', title: 'Slider', component: 'components/sliders' },      
-      { name: 'tooltip', title: 'Tooltip', component: 'components/tooltips' },      
-      { name: 'pagination', title: 'Pagination', component: 'components/paginations' },      
-      { name: 'typography', title: 'Typography', component: 'components/typography' },      
-      { name: 'color', title: 'Color', component: 'components/color' },      
-
+      { name: 'boleto', title: 'Boletos', component: 'boleto' },
+      { name: 'remessa', title: 'Comunicação com Banco', component: 'remessa' },
+      { name: 'devedor', title: 'Devedores', component: 'devedor' },
     ]
   },
   {
-    title: 'Pickers',
-    group: 'pickers',
-    component: 'picker',
-    icon: 'filter_vintage',
-    items: [
-      { name: 'timepicker', title: 'Timepicker', component: 'pickers/timepicker' },     
-      { name: 'datepicker', title: 'Datepicker', component: 'pickers/datepicker' },      
-
-    ]
+    title: 'Clientes',
+    group: 'cliente',
+    name: 'cliente',
+    component: 'cliente',
+    icon: 'how_to_reg',
+    // items: [
+    //   { name: 'cliente', title: 'Gestão de Clientes', component: 'cliente' },
+    //   { name: 'controle-aulas', title: 'Imposto de Renda', component: 'home' },
+    //   { name: 'registro-financeiro', title: 'Registro Financeiro', component: 'registro-financeiro' },
+    //   { name: 'controle-aulas', title: 'Situação Financeira', component: 'home' },
+    // ]
   },
   {
-    title: 'Layout',
-    group: 'layout',
-    component: 'layout',
-    icon: 'view_compact',
-    items: [
-      { name: 'bottom-sheets', title: 'Bottom panels', component: 'components/bottom-sheets' },
-      { name: 'expansion-panels', title: 'Expansion panels', component: 'components/expansion-panels' },
-      { name: 'footer', title: 'Footer', component: 'components/footer' },
-      { name: 'lists', title: 'Lists', component: 'components/lists' },
-      { name: 'jumbotrons', title: 'Jumbotrons', badge: 'new', component: 'components/jumbotrons' },
-      { name: 'menus', title: 'Menus', component: 'components/menus' },
-      // { name: 'navigation-drawers', title: 'Navigation drawers', component: 'components/navigation-drawers' },
-      { name: 'tabs', title: 'Tabs', component: 'components/tabs' },
-      { name: 'toolbar', title: 'Toolbars', component: 'components/toolbar' },
-      { name: 'timeline', title: 'Timeline', component: 'components/timeline' },
-    ]
-  },  
+    title: 'Fornecedores',
+    group: 'fornecedor',
+    name: 'fornecedor',
+    component: 'fornecedor',
+    icon: 'shopping_basket',
+    // items: [
+    //   { name: 'fonecedores', title: 'Gestão de Fornecedores', component: 'fonecedores' },
+    //   { name: 'relacionamento', title: 'Histórico de Relacionamento', component: 'relacionamento' },
+    //   { name: 'controle-aulas', title: 'Relatórios', component: 'home' },
+    // ]
+  },
+  { header: 'Logística' },
   {
-    title: 'Forms & Controls',
-    group: 'forms',
-    component: 'forms',
-    icon: 'edit',
+    title: 'Produtos',
+    group: 'produto',
+    name: 'produto',
+    component: 'produto',
+    icon: 'shopping_cart',
+    // items: [
+    //   { name: 'produto', title: 'Gestão de Produtos', component: 'produto' },
+    //   { name: 'saida-produto', title: 'Saida de Produto', component: 'saida-produto' },
+    // ]
+  },
+  {
+    title: 'Estoque',
+    group: 'estoque',
+    component: 'estoque',
+    icon: 'poll',
+    // items: [
+    //   { name: 'controle-aulas', title: 'Estoque', component: 'home' },
+    //   { name: 'lancamento-estoque', title: 'Lançamento no Estoque', component: 'lancamento-estoque' },    
+    // ]
+  },
+  {
+    title: 'Reserva de Recursos',
+    group: 'recurso',
+    component: 'recurso',
+    icon: 'meeting_room',
     items: [
-      { name: 'basic', title: 'General', component: 'components/basic-forms' },
-      { name: 'selects', title: 'Selects', badge: 'new', component: 'components/selects' },
-      { name: 'selection-controls', title: 'Selection Controls', component: 'components/selection-controls' },
-      { name: 'text-fields', title: 'Text Fields', component: 'components/text-fields' },
-      { name: 'steppers', title: 'Steppers', component: 'components/steppers' },
-      { name: 'editors', title: 'Editors', component: 'components/editors' },
+      { name: 'sala', title: 'Salas', component: 'sala' },
+      { name: 'equipamento', title: 'Equipamentos', component: 'equipamento' },
     ]
   },
   { divider: true },
-  { header: 'Extras' },
   {
-    title: 'Pages',
-    group: 'extra',
-    icon: 'list',
+    title: 'Painel de Operações',
+    group: 'operacional',
+    component: 'operacional',
+    icon: 'settings',
     items: [
-      { name: 'Login', title: 'Login', component: 'Login' },
-      { name: '404', title: '404', component: 'NotFound' },
-      { name: '403', title: '403', component: 'AccessDenied' },
-      { name: '500', title: '500', component: 'ServerError' },
+    // para outro lugar?  { name: 'controle-aulas', title: 'Tarefas e Ações', component: 'home' },
+      { name: 'usuario', title: 'Usuários e Permissões', component: 'usuario' },
+      { name: 'base-dados', title: 'Backup do BD', component: 'base-dados' },
     ]
   },
 ];
