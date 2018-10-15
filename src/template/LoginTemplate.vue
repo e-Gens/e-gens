@@ -1,9 +1,5 @@
 <template>
   <v-app>
-    <!-- Barra de nevagação esquerda -->
-    <!-- Cabeçalho do menu lateral esquerdo -->
-    <gns-menu :mini.sync="mini" :clipped.sync="clipped" :drawer.sync="drawer"> </gns-menu>
-
     <!-- Barra Superior -->
     <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
       <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="!drawer || showIcon">
@@ -94,20 +90,14 @@
     <!-- Conteúdo Principal -->
     <v-content>
       <slot name="main">
-        <!-- Conteúdo das páginas será carregado aqui -->
-        <router-view></router-view>
+          <!-- Conteúdo das páginas será carregado aqui -->
       </slot>
     </v-content>
    
     <!-- Rodapé -->
     <gns-footer>
-      <v-col>
-        <v-row>
         <slot name="footer">
         </slot>
-
-        </v-row>
-      </v-col>
     </gns-footer>
 
   </v-app>

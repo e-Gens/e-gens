@@ -1,15 +1,17 @@
 <template>
     <v-footer fixed app elevation-0 height="20">
-      <v-layout justify-center row wrap>
-        <v-flex primary lighten-1 py-3 text-xs-center white--text xs12 >
+        <v-layout row class="footer-copyright" primary lighten-1 align-center justify-space-between fill-height>
+            <v-flex xs6>
+            <span><strong>&copy; {{ new Date().getFullYear() }} e-Gens</strong></span>
             <slot/>
-        </v-flex>
-      </v-layout>
+            <v-spacer></v-spacer>
+            </v-flex>
+        </v-layout>
     </v-footer>
 </template>
 
 <script>
 export default {
-    name: 'GnsFooter'
-}
+  name: "GnsFooter"
+};
 </script>
