@@ -1,17 +1,13 @@
 <template>
   <v-app>
     <!-- Barra Superior -->
-    <v-toolbar dense  color="primary lighten-1" dark >
-      <v-layout align-center justify-space-between row fill-height>
-        <v-toolbar-side-icon>
-          <v-img src="/img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
-        </v-toolbar-side-icon>
+    <v-toolbar  color="primary lighten-1" dark >
+      <v-layout align-center justify-center row fill-height>
+        <v-avatar tile>
+          <v-img src="/img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+        </v-avatar>
         <v-list-tile>
-          <v-toolbar-title v-text="title"></v-toolbar-title>              
-        </v-list-tile>
-        <v-spacer></v-spacer>
-        <v-list-tile>
-          <v-toolbar-subtitle v-text="client"></v-toolbar-subtitle>              
+          <v-toolbar-title v-text="client"></v-toolbar-title>              
         </v-list-tile>
       
       </v-layout>

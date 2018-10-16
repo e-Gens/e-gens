@@ -9,6 +9,12 @@ export default {
   name: "App",
   components: {
     GnsSpaTemplate
-  }
+  },
 };
 </script>
+
+<style>
+  html{
+    overflow: hidden
+  }
+</style>
