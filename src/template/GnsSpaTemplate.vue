@@ -31,17 +31,17 @@
       <v-menu v-model="menu" left :close-on-content-click="false" transition="slide-x-reverse-transition" >
           <v-btn slot="activator" flat block>
             <v-list-tile-avatar>
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg">
+              <img src="https://randomuser.me/api/portraits/men/83.jpg">
             </v-list-tile-avatar>
             <small>{{ usuario }}</small>
             <v-icon small >keyboard_arrow_down</v-icon>
           </v-btn>
   
-        <v-card flat light color="secondary " >
+        <v-card flat light color="secondary" >
           <v-list>
             <v-list-tile avatar >
               <v-list-tile-avatar>
-                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="John">
               </v-list-tile-avatar>
               <v-list-tile-content>
                 <v-list-tile-title>{{ usuario }}</v-list-tile-title>

@@ -15,7 +15,7 @@
     </v-slide-y-transition>
     </v-container>
     <span slot="footer">
-      <span> | Informação adicional sobre o produto</span>
+      <span> | Módulo Home</span>
     </span>
   </gns-spa-template>    
 </template>
