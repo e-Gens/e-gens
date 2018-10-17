@@ -80,7 +80,7 @@ You may (at your option) instead use any later version of the GNU Affero General
 
 #### Português
 
-O texto da licença [anexado] (https://raw.githubusercontent.com/e-Gens/e-gens/master/LICENSE) se aplica a todos os arquivos dentro dessa distribuição, exceto aqueles que estão em um diretório que contém arquivos denominados "LICENSE" ou "COPYING", ou um subdiretório dos mesmos. Para esses arquivos, o texto de licença contido no dito arquivo substitui qualquer informação de licença contida em diretórios de menor profundidade. Licenças alternativas são normalmente usadas para software fornecido por terceiros e simplesmente empacotadas com este software por conveniência.
+O texto da licença [anexado](https://raw.githubusercontent.com/e-Gens/e-gens/master/LICENSE) se aplica a todos os arquivos dentro dessa distribuição, exceto aqueles que estão em um diretório que contém arquivos denominados "LICENSE" ou "COPYING", ou um subdiretório dos mesmos. Para esses arquivos, o texto de licença contido no dito arquivo substitui qualquer informação de licença contida em diretórios de menor profundidade. Licenças alternativas são normalmente usadas para software fornecido por terceiros e simplesmente empacotadas com este software por conveniência.
 
 Você pode (a seu critério) usar qualquer versão posterior da Licença Pública GNU Affero.
 
