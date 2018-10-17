@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-if="this.usuario">
     <!-- Barra de nevagação esquerda -->
     <!-- Cabeçalho do menu lateral esquerdo -->
     <gns-menu :mini.sync="mini" :clipped.sync="clipped" :drawer.sync="drawer"> </gns-menu>
@@ -31,20 +31,20 @@
       <v-menu v-model="menu" left :close-on-content-click="false" transition="slide-x-reverse-transition" >
           <v-btn slot="activator" flat block>
             <v-list-tile-avatar>
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg">
+              <img src="https://randomuser.me/api/portraits/men/83.jpg">
             </v-list-tile-avatar>
-            <small>{{ usuario }}</small>
+            <small>{{ usuario.name }}</small>
             <v-icon small >keyboard_arrow_down</v-icon>
           </v-btn>
   
-        <v-card flat light color="secondary " >
+        <v-card flat light color="secondary" >
           <v-list>
             <v-list-tile avatar >
               <v-list-tile-avatar>
-                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="John">
               </v-list-tile-avatar>
               <v-list-tile-content>
-                <v-list-tile-title>{{ usuario }}</v-list-tile-title>
+                <v-list-tile-title>{{ usuario.name }}</v-list-tile-title>
                 <v-list-tile-sub-title>Função do usuário</v-list-tile-sub-title>
               </v-list-tile-content>
               
@@ -94,14 +94,20 @@
     <!-- Conteúdo Principal -->
     <v-content>
       <slot name="main">
-          <!-- Conteúdo das páginas será carregado aqui -->
+        <!-- Conteúdo das páginas será carregado aqui -->
+        <router-view></router-view>
       </slot>
     </v-content>
    
     <!-- Rodapé -->
     <gns-footer>
+      <v-col>
+        <v-row>
         <slot name="footer">
         </slot>
+
+        </v-row>
+      </v-col>
     </gns-footer>
 
   </v-app>
@@ -128,7 +134,7 @@ export default {
 
       title: "e-Gens",
       client: "Preparatório Diamantinense",
-      usuario: "José da Silva"
+      usuario: false
     };
   },
   components: {
@@ -136,6 +142,12 @@ export default {
     GnsFooter
   },
   created () {
+    let usuarioAux = sessionStorage.getItem('usuario');
+    if (usuarioAux) {
+      this.usuario = JSON.parse(usuarioAux);
+    } else {
+      this.$router.push('/login')
+    }
   },
   mounted () {
   },
@@ -158,6 +170,11 @@ export default {
     },
     handleFullScreen () {
       Util.toggleFullScreen();
+    },
+    sair(){
+      sessionStorage.clear();
+      this.usuario = false;
+      this.$router.push('/login')
     }
   }
 };
