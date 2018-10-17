@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-if="this.usuario">
     <!-- Barra de nevagação esquerda -->
     <!-- Cabeçalho do menu lateral esquerdo -->
     <gns-menu :mini.sync="mini" :clipped.sync="clipped" :drawer.sync="drawer"> </gns-menu>
@@ -33,7 +33,7 @@
             <v-list-tile-avatar>
               <img src="https://randomuser.me/api/portraits/men/83.jpg">
             </v-list-tile-avatar>
-            <small>{{ usuario }}</small>
+            <small>{{ usuario.name }}</small>
             <v-icon small >keyboard_arrow_down</v-icon>
           </v-btn>
   
@@ -44,7 +44,7 @@
                 <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="John">
               </v-list-tile-avatar>
               <v-list-tile-content>
-                <v-list-tile-title>{{ usuario }}</v-list-tile-title>
+                <v-list-tile-title>{{ usuario.name }}</v-list-tile-title>
                 <v-list-tile-sub-title>Função do usuário</v-list-tile-sub-title>
               </v-list-tile-content>
               
@@ -134,7 +134,7 @@ export default {
 
       title: "e-Gens",
       client: "Preparatório Diamantinense",
-      usuario: "José da Silva"
+      usuario: false
     };
   },
   components: {
@@ -142,6 +142,12 @@ export default {
     GnsFooter
   },
   created () {
+    let usuarioAux = sessionStorage.getItem('usuario');
+    if (usuarioAux) {
+      this.usuario = JSON.parse(usuarioAux);
+    } else {
+      this.$router.push('/login')
+    }
   },
   mounted () {
   },
@@ -164,6 +170,11 @@ export default {
     },
     handleFullScreen () {
       Util.toggleFullScreen();
+    },
+    sair(){
+      sessionStorage.clear();
+      this.usuario = false;
+      this.$router.push('/login')
     }
   }
 };

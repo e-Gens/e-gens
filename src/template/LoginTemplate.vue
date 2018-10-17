@@ -9,6 +9,9 @@
         <v-list-tile>
           <v-toolbar-title v-text="client"></v-toolbar-title>              
         </v-list-tile>
+        <v-list-tile>
+          <v-toolbar-title v-text="usuario.name"></v-toolbar-title>              
+        </v-list-tile>
       
       </v-layout>
       
@@ -35,17 +38,29 @@ export default {
   data() {
     return {
       title: "e-Gens",
-      client: "Nome do Cliente"
+      client: "Nome do Cliente",
+      usuario: false
     };
   },
   components: {
     GnsFooter
   },
   created () {
+    console.log('created()')
+    let usuarioAux = sessionStorage.getItem('usuario');
+    if (usuarioAux) {
+      this.usuario = JSON.parse(usuarioAux);
+      this.$router.push('/')
+    }
   },
   mounted () {
   },
   computed: {},
-  methods: {}
+  methods: {
+    sair(){
+      sessionStorage.clear();
+      this.usuario = false;
+    }
+  }
 };
 </script>
