@@ -16,7 +16,7 @@
                 <v-card-text>
                   <v-text-field v-model="email" :rules="emailRules" label="E-mail" required>
                   </v-text-field>
-                  <v-text-field v-model="password" :rules="nameRules" :counter="10" label="Senha" required>
+                  <v-text-field v-model="password" :rules="passwordRules" :counter="10" label="Senha" required>
                   </v-text-field>
                 </v-card-text>
                 <v-card-actions>
@@ -51,14 +51,14 @@ export default {
   data: () => ({
     valid: true,
     password: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+    passwordRules: [
+      v => !!v || 'Senha é obrigatória',
+      v => (v && v.length <= 10) || 'Senha tem que ser menor que 10 caracteres'
     ],
     email: '',
     emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid'
+      v => !!v || 'E-mail é obrigatório',
+      v => /.+@.+/.test(v) || 'Você precisa de um e-mail válido.'
     ]
   }),
   computed: {
@@ -76,10 +76,33 @@ export default {
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        axios.post('api-gens/login', {
+        console.log('Axios aqui!')
+        axios.post('http://api-gens/api/login', {
           email: this.email,
           password: this.password
         })
+        .then(response => {
+          console.log(response)
+          if (response.data.token) {
+            //sucesso
+          } else if (response.data.status == false) {
+            console.log('Login não existe!')
+            alert('Login ou senha incorretos')
+          }else{
+            console.log('Erros de validação')
+            let erros = '';
+            for (let erro of Object.values(response.data)) {
+              erros += erro + " ";
+              
+            }
+            alert(erros);
+          }
+        })
+        .catch(e => {
+          this.errors.push(e)
+          alert('Erro no servidor');
+        })
+
       }
     },
     clear () {
@@ -92,20 +115,16 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
-  #loginImage {
-    background-image: url("/img/login/janelas.jpg"); /* The image used */
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 92vh; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    border-right: 2px solid green;
+<style lang="stylus">
+  #loginImage 
+    background-image: url("/img/login/janelas.jpg")
+    height: 92vh;
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    border-right: 1px solid green
 
-  }
-  
-  #loginLayout {
-    height: 70vh;
-  }
+  #loginLayout 
+    height: 70vh
 
 </style>

@@ -3,18 +3,14 @@
 </template>
 
 <script>
-import GnsSpaTemplate from "@/template/GnsSpaTemplate";
 
 export default {
   name: "App",
-  components: {
-    GnsSpaTemplate
-  },
 };
 </script>
 
-<style>
-  html{
+<style lang="stylus">
+  html
     overflow: hidden
-  }
 </style>
+
