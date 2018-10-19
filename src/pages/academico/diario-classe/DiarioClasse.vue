@@ -1,4 +1,4 @@
-<template>
+<template>     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in" leave-absolute hide-on-leave >
       <v-layout column align-center>
         <v-layout wrap>
@@ -17,7 +17,7 @@
         <p>O lançamento dos dados será feito pelo professor, em sua interface,</p>
         <p> mas também poderá ser encaminhado para a secretaria realizar os lançamentos</p>
       </v-layout>
-    </v-slide-y-transition>
+    </v-slide-y-transition>     </v-container>
 </template>
 
 <script>

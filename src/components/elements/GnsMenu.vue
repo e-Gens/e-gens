@@ -45,10 +45,10 @@
               </v-list-tile>
               <template v-for="(subItem, i) in item.items">
                 <!--sub group-->
-                <v-list-group v-if="subItem.items" :key="subItem.name" :prepend-icon="subItem.icon" :group="subItem.group" sub-group="sub-group">
+                <v-list-group  v-if="subItem.items" :key="subItem.name" :prepend-icon="subItem.icon" :group="subItem.group" sub-group="sub-group">
                   <v-list-tile slot="activator" ripple="ripple">
                     <v-list-tile-content>
-                      <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                     <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
                     </v-list-tile-content>
                   </v-list-tile>
                   <v-list-tile v-for="(grand, i) in subItem.children" :key="i" :to="genChildTarget(item, grand)" :href="grand.href" ripple="ripple">
@@ -121,11 +121,7 @@ export default {
   computed: {
     computeGroupActive () {
       return true;
-    },
-
-    sideToolbarColor () {
-      return this.$vuetify.options.extra.sideNav;
-    }    
+    }, 
   },
   created () {
     window.getApp.$on('APP_DRAWER_TOGGLED', () => {

@@ -35,6 +35,9 @@
             </v-list-tile-avatar>
             <small>{{ usuario.name }}</small>
             <v-icon small >keyboard_arrow_down</v-icon>
+            <v-btn flat small icon @click="sair()">
+              <v-icon medium >exit_to_app</v-icon>
+            </v-btn>
           </v-btn>
   
         <v-card flat light color="secondary" >
@@ -101,13 +104,9 @@
    
     <!-- Rodapé -->
     <gns-footer>
-      <v-col>
-        <v-row>
         <slot name="footer">
+          {{ this.name }}
         </slot>
-
-        </v-row>
-      </v-col>
     </gns-footer>
 
   </v-app>
@@ -117,9 +116,10 @@
 import GnsFooter from "@/components/elements/GnsFooter";
 import GnsMenu from "@/components/elements/GnsMenu";
 import Util from '@/util';
+import AppEvents from '@/event'
 
 export default {
-  name: "SpaTemplate",
+  name: "Page",
   data() {
     return {
       fixed: false,
@@ -148,6 +148,10 @@ export default {
     } else {
       this.$router.push('/login')
     }
+    AppEvents.forEach(item => { 
+      this.$on(item.name, item.callback);
+    });
+    window.getApp = this;
   },
   mounted () {
   },
