@@ -84,9 +84,8 @@ export default {
         .then(response => {
           console.log(response)
           if (response.data.token) {
-            //sucesso
             sessionStorage.setItem('usuario',JSON.stringify(response.data))
-            this.$router.push('/')
+            this.$router.push('/app')
           } else if (response.data.status == false) {
             console.log('Login não existe!')
             alert('Login ou senha incorretos')
