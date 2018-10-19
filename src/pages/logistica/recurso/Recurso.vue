@@ -1,4 +1,4 @@
-<template>
+<template>     <v-container fluid slot="main">
     <v-slide-y-transition mode="out-in" leave-absolute hide-on-leave >
       <v-layout column align-center>
         <v-layout wrap>
@@ -10,7 +10,7 @@
         <h3> Componente: <strong>Recurso</strong> </h3>
         <h2>Grupo de Recursos</h2>
       </v-layout>
-    </v-slide-y-transition>
+    </v-slide-y-transition>     </v-container>
 </template>
 
 <script>
