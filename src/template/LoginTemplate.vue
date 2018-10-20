@@ -4,13 +4,10 @@
     <v-toolbar  color="primary lighten-1" dark >
       <v-layout align-center justify-center row fill-height>
         <v-avatar tile>
-          <v-img src="/img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+          <v-img :src="logoCliente" alt="Logo Cliente" contain></v-img>
         </v-avatar>
         <v-list-tile>
           <v-toolbar-title v-text="client"></v-toolbar-title>              
-        </v-list-tile>
-        <v-list-tile>
-          <v-toolbar-title v-text="usuario.name"></v-toolbar-title>              
         </v-list-tile>
       
       </v-layout>
@@ -39,14 +36,15 @@ export default {
     return {
       title: "e-Gens",
       client: "Nome do Cliente",
-      usuario: false
+      usuario: false,
+      logoCliente: require('@/assets/img/logo/logo.png')
     };
   },
   components: {
     GnsFooter
   },
   created () {
-    console.log('created()')
+    //console.log('created()')
     let usuarioAux = sessionStorage.getItem('usuario');
     if (usuarioAux) {
       this.usuario = JSON.parse(usuarioAux);
