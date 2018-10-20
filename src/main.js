@@ -7,7 +7,12 @@ import store from './store'
 import './registerServiceWorker'
 import axios from 'axios'
 
-Vue.use(axios)
+Vue.prototype.$axios = axios
+const base = axios.create({
+  baseURL: 'http://api-gens.com.br'
+})
+
+Vue.prototype.$http = base
 
 Vue.config.productionTip = false
 

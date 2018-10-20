@@ -14,7 +14,7 @@
       </v-toolbar-side-icon>
       <v-list-tile v-if="!mini">
         <v-toolbar-side-icon @click.stop="$emit('update:drawer',drawer = !drawer)">
-          <v-img src="/img/logo/logo-light.png" alt="Logo e-Gens" contain></v-img>
+          <v-img :src="logoGens" alt="Logo e-Gens" contain></v-img>
         </v-toolbar-side-icon>
         <v-list-tile>
           <v-toolbar-title v-text="title"></v-toolbar-title>                 
@@ -22,11 +22,11 @@
       </v-list-tile>
     </v-toolbar>
 
-    <v-toolbar @click.stop="$emit('update:mini',mini = !mini)"  >
-      <v-toolbar-side-icon>
-        <v-img src="/img/logo/logo.png" alt="Logo Cliente" contain></v-img>
+    <v-toolbar>
+      <v-toolbar-side-icon to="/app">
+        <v-img :src="logoCliente" alt="Logo Cliente" contain></v-img>
       </v-toolbar-side-icon>
-      <v-list-tile v-if="!mini" >
+      <v-list-tile v-if="!mini" to="/app">
         <v-toolbar-title v-text="client"></v-toolbar-title>                   
       </v-list-tile>
     </v-toolbar>
@@ -110,6 +110,8 @@ export default {
     mini: false,
     drawer: true,
     clipped: false,
+    logoCliente: require('@/assets/img/logo/logo.png'),
+    logoGens: require('@/assets/img/logo/logo-light.png'),
 
     menus: menu,
     scrollSettings: {
@@ -121,7 +123,7 @@ export default {
   computed: {
     computeGroupActive () {
       return true;
-    }, 
+    },
   },
   created () {
     window.getApp.$on('APP_DRAWER_TOGGLED', () => {
@@ -146,7 +148,7 @@ export default {
       return {
           name: item.component,
         };
-    }
+    },
     
   },
   beforeDestroy() {

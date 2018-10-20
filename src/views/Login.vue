@@ -9,7 +9,7 @@
             <v-card flat>
               <v-layout align-center justify-center column fill-height>
                 <v-flex>
-                    <v-img src="/img/logo/logo-login.png" max-width="250px" width="60vw"></v-img>
+                    <v-img :src="imageLogin" max-width="250px" width="60vw"></v-img>
                 </v-flex>
               </v-layout>
               <v-form ref="form" v-model="valid" lazy-validation>
@@ -44,7 +44,6 @@
 
 <script>
 import LoginTemplate from "@/template/LoginTemplate"
-import axios from 'axios'
 
 export default {
   name: "Login",
@@ -59,7 +58,8 @@ export default {
     emailRules: [
       v => !!v || 'E-mail é obrigatório',
       v => /.+@.+/.test(v) || 'Você precisa de um e-mail válido.'
-    ]
+    ],
+    imageLogin: require('@/assets/img/logo/logo-login.png')
   }),
   computed: {
     showImage () {
@@ -76,24 +76,24 @@ export default {
     submit () {
       if (this.$refs.form.validate()) {
         // Native form submission is not yet supported
-        console.log('Axios aqui!')
-        axios.post('http://api-gens/api/login', {
+        // console.log('Axios aqui!')
+        this.$http.post('/api/login', {
           email: this.email,
           password: this.password
         })
         .then(response => {
-          console.log(response)
+          //console.log(response)
           if (response.data.token) {
             sessionStorage.setItem('usuario',JSON.stringify(response.data))
-            this.$router.push('/app')
+            this.$router.push('app')
           } else if (response.data.status == false) {
-            console.log('Login não existe!')
+            //console.log('Login não existe!')
             alert('Login ou senha incorretos')
           }else{
-            console.log('Erros de validação')
+            //console.log('Erros de validação')
             let erros = '';
             for (let erro of Object.values(response.data)) {
-              erros += erro + " ";
+              erros += erro + " \n";
               
             }
             alert(erros);
@@ -118,7 +118,7 @@ export default {
 
 <style lang="stylus">
   #loginImage 
-    background-image: url("/img/login/janelas.jpg")
+    background-image: url("../assets/img/login/janelas.jpg")
     height: 92vh;
     background-position: center
     background-repeat: no-repeat

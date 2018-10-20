@@ -7,7 +7,7 @@
     <!-- Barra Superior -->
     <v-toolbar app dense :clipped-left="clipped" color="primary lighten-1" dark>
       <v-toolbar-side-icon @click.stop="handleDrawerToggle" v-if="!drawer || showIcon">
-          <v-img src="/img/logo/logo-light.png" alt="Logo " contain></v-img>
+          <v-img :src="logoGens" alt="Logo " contain></v-img>
       </v-toolbar-side-icon>
       <v-btn icon @click="handleFullScreen()">
         <v-icon>fullscreen</v-icon>
@@ -105,7 +105,6 @@
     <!-- Rodapé -->
     <gns-footer>
         <slot name="footer">
-          {{ this.name }}
         </slot>
     </gns-footer>
 
@@ -126,6 +125,7 @@ export default {
       clipped: false,
       mini: false,
       drawer: true,
+      logoGens: require('@/assets/img/logo/logo-light.png'),
 
       menu: false,
       mensagens: false,
