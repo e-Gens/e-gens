@@ -19,5 +19,7 @@ module.exports = {
           swSrc: './src/registerServiceWorker.js',
           // ...other Workbox options...
         }
-      }
+    },
+    lintOnSave: process.env.NODE_ENV !== 'production',
+    outputDir: '../demo.e-gens.com.br'
 }
