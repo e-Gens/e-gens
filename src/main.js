@@ -9,7 +9,7 @@ import axios from 'axios'
 
 Vue.prototype.$axios = axios
 const base = axios.create({
-  baseURL: 'http://api-gens.com.br'
+  baseURL: 'http://api.e-gens.com.br'
 })
 
 Vue.prototype.$http = base
