@@ -17,9 +17,9 @@ module.exports = {
         workboxOptions: {
           // swSrc is required in InjectManifest mode.
           swSrc: './src/registerServiceWorker.js',
+          swDest: 'service-worker.js',
           // ...other Workbox options...
+          importWorkboxFrom: 'cdn',
         }
-    },
-    lintOnSave: process.env.NODE_ENV !== 'production',
-    outputDir: '../demo.e-gens.com.br'
+    }
 }
