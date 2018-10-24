@@ -1,7 +1,12 @@
 .DS_Store
 node_modules
 /dist
+
+# Deploy
 deploy.js
+deploy.full.sh
+/demo.e-gens.com.br
+
 
 # local env files
 .env.local

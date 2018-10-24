@@ -21,5 +21,6 @@ module.exports = {
           // ...other Workbox options...
           importWorkboxFrom: 'cdn',
         }
-    }
+    },
+    outputDir: 'demo.e-gens.com.br'
 }
