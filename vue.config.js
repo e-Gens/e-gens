@@ -3,7 +3,7 @@ module.exports = {
         overlay: {
             warnings: true,
             errors: true
-        }
+        }        
     },
     pwa: {
         name: 'e-Gens',
