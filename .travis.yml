@@ -7,17 +7,13 @@ cache:
   - node_modules
   - demo.e-gens.com.br
 before_install:
-- openssl aes-256-cbc -K $encrypted_564a5f20e1d7_key -iv $encrypted_564a5f20e1d7_iv
-  -in deploy.js.enc -out deploy.js -d
 - sudo apt-get update
 - sudo apt-get install -y sshpass
 script:
 - yarn lint
 - yarn build
 after_success:
-  deploy:
-  - provider: script
-    script: bash deploy.sh
+  ./deploy.sh
 env:
   global:
   - secure: JGsuOMP5msFeWuNYF7Q5pmKP5TkHc+dVNnCpaZTg3bOnJmtw+iexuHY4T77xkMKtHqHPdBlcVBxaXkVOa5Qfw2/Db9tt09bwn0PE13fh3oAMKQQ7ceuLMgWtFu5QVpnqVXJ0heoarVklKNTz70zWJJTx+drQYjj8REd/6HZII6iE9pEM/U+yp1Pc5MKbta+4s9bt3qDxkaW+TPUwowFqEhDzTn0XfxVpdCbr5j/R/7V8QhKtjBb9UiMA0x5uXBTkt5wXuED5ccoUIpcxoERMRWwZ14YTNTpSoOS20EeecnpLFOKPz7pyu9mkgcdh416Nx+ni6DjZ7nKljjnDiv59iiO1ZK1Zxo/V8vTxLZYq8fAzOhlp/gb3IDLD3JWFeTj+spuLx41KNgcbabrS+WHXxe7FsYHeK6CSYOIDstp6ugtUt/kzMfsPHh4s4RIYKXOewIEws4rWjT9gAVfMo7jqtukb508Uacr5ajmTCF+Jll71VeRazqPYshps4XBZX4zGtza6JvF12IGnyYPRz3i7z29ts52Yv9dOeuCqgcJqzUWnlG3Q8fE3etiLpb1Grph9DF5Mq/7s8saiy4Lq5Nwofxv43e1OzFuE+qrEPfSe95r5Ab4iH3LQXiCobR2MiOu7F8LCDyzF5papsDcYuYuS3sxUpH3n08gwuBB2TLfk6XU=
