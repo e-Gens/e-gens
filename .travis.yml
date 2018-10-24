@@ -10,6 +10,6 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_564a5f20e1d7_key -iv $encrypted_564a5f20e1d7_iv
   -in deploy.js.enc -out deploy.js -d
 script:
-- yarn install
 - yarn lint
 - yarn build
+- yarn deploy
