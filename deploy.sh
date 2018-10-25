@@ -1,7 +1,7 @@
 #!/bin/sh
 # Variáveis via Travis Secrets
 
-sshpass -p $FTP_PASSWD sftp -P 2222 -v -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST <<END_SCRIPT
+sshpass -p $FTP_PASSWD sftp -P 2222 -v -o IdentityFile='src/assets/ssh/id_rsa' $FTP_USER@$FTP_HOST <<END_SCRIPT
 progress
 rm $REMOTE_ROOT/$LOCAL_ROOT/$FILE
 rm $REMOTE_ROOT/$LOCAL_ROOT/css/$FILE
