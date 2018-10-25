@@ -8,7 +8,7 @@ cache:
   - demo.e-gens.com.br
 before_install:
 - openssl aes-256-cbc -K $encrypted_564a5f20e1d7_key -iv $encrypted_564a5f20e1d7_iv
-  -in id_rsa.enc -out src/assets/ssh/id_rsa -d
+  -in src/assets/ssh/id_rsa.enc -out src/assets/ssh/id_rsa -d
 - openssl aes-256-cbc -K $encrypted_564a5f20e1d7_key -iv $encrypted_564a5f20e1d7_iv
   -in src/assets/ssh/id_rsa.pub.enc -out src/assets/ssh/id_rsa.pub -d
 - sudo apt-get update
