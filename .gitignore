@@ -6,6 +6,7 @@ node_modules
 deploy.js
 deploy.full.sh
 /demo.e-gens.com.br
+src/assets/ssh/id_rsa.pub
 
 
 # local env files
