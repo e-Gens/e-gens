@@ -15,11 +15,10 @@ script:
 - yarn lint
 - yarn build
 
-stages:
-  - name: deploy
-    # require the branch name to be master (note for PRs this is the base branch name)
-    if: branch = feature/travis-deploy
-    after_success: "./deploy.sh"
+deploy: 
+  # require the branch name to be master (note for PRs this is the base branch name)
+  - if: branch = feature/travis-deploy OR master
+  - ./deploy.sh
 env:
   global:
   - secure: sEv3a1neuy2uPDCEZ793BpCacvmcTS7rDXSjgvIVRKBE38o6TRjzaIQkXYkwGEphznzbgcYz9RP38BwRdlm2KS03nbLOe7AZKg2PuNoicIruTqr58tSlSOeynxzqsurRGN2XobDIkDYlPFsUuWZsxlWw0dNMhWOPv0gqGIgy7bCS+bmhGLntWx8dGhWszqvAO+KGBssiKqipc0HfxDUac83u8A4guEyEKROMH7MLriPriA2FCqcc16jjYv8CS/VVkz1dXDx8LxUvIOlnZYxdDIMUaX26JvsHrXaWrotPOwUCiDJiXxdXeucoZNVHQdKLcl+O7K1XTMOUyFXhf1o4Kpl6ZWcXIEH7AVFNKn4Wj17oKQHghujc1UBT3U6QuFMde7+h+iRoC6vF85nY194O1LKR6S3oUyDzENWZCQm2uBRgEttW/QP0LZAavAfUh5Bru5LtqPkBer5SZ02lyk799mq9IzdV1psAq0NCsP7NEvAnAvj3Dp1PN9O+VYTqIsSjbYjifdtEmf89IO8TNVLTNwFTmOfCbpj8kRXIa2v6w4W41c5wZkyc5UBeQfDu9T5+D+duk1N8pFHaKGJ5Po8RTJyAAVrFTvBUho5AT4VKsEcYqYuJ+vLk+GbXkcrvZfNtztQgaK5PbapVIsGpxYF3bCOCfchWBDA9QJzmUK7sQ0w=
