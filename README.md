@@ -1,5 +1,9 @@
 # e-Gens - Sistema de Gestão do Ensino
 
+## Build Status
+
+[![Build Status](https://travis-ci.org/e-Gens/e-gens.svg?branch=master)](https://travis-ci.org/e-Gens/e-gens)
+
 ## Project setup
 
 ```shell
