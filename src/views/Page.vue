@@ -179,6 +179,7 @@ export default {
       sessionStorage.clear();
       this.usuario = false;
       this.$router.push('/login')
+      window.getApp.$emit('APP_LOGOUT');
     }
   }
 };

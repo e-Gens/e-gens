@@ -9,7 +9,7 @@ import axios from 'axios'
 
 Vue.prototype.$axios = axios
 const base = axios.create({
-  baseURL: 'http://api-gens.com.br'
+  baseURL: process.env.VUE_APP_URL_API
 })
 
 Vue.prototype.$http = base

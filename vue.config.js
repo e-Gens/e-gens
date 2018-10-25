@@ -3,7 +3,7 @@ module.exports = {
         overlay: {
             warnings: true,
             errors: true
-        }
+        }        
     },
     pwa: {
         name: 'e-Gens',
@@ -16,8 +16,11 @@ module.exports = {
         workboxPluginMode: 'InjectManifest',
         workboxOptions: {
           // swSrc is required in InjectManifest mode.
-          swSrc: './src/registerServiceWorker.js',
+          swSrc: './src/sw.js',
+          swDest: 'service-worker.js',
           // ...other Workbox options...
+          importWorkboxFrom: 'cdn',
         }
-      }
+    },
+    outputDir: 'demo.e-gens.com.br'
 }
