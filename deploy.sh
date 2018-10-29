@@ -20,8 +20,7 @@ progress;
 put -r $LOCAL_ROOT $REMOTE_ROOT;
 bye;
 "
-
-if [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ]
+if [ "${TRAVIS_BRANCH}" = "master" ] && [ !${TRAVIS_PULL_REQUEST} ]
 # Deploy apenas no [master]
 then
 sshpass -p $FTP_PASSWD sftp -P $FTP_PORT -v -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST <<END_SCRIPT
