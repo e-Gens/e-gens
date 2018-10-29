@@ -6,17 +6,36 @@
         </v-flex>
         <v-flex pa-3>
           <v-layout align-space-around justify-center column fill-height>
-            <v-card flat>
+            <v-card>
+              <br/>
+              <br/>
               <v-layout align-center justify-center column fill-height>
-                <v-flex>
-                    <v-img :src="imageLogin" max-width="250px" width="60vw"></v-img>
+                <v-flex >
+                    <v-img :src="imageLogin" max-width="12vw" width="60vw"></v-img>
                 </v-flex>
               </v-layout>
               <v-form ref="form" v-model="valid" lazy-validation>
                 <v-card-text>
-                  <v-text-field v-model="email" :rules="emailRules" label="E-mail" required>
+                  <v-text-field 
+                    v-model="email"
+                    :rules="emailRules"
+                    label="E-mail"
+                    prepend-icon="alternate_email"
+                    required
+                    >
                   </v-text-field>
-                  <v-text-field v-model="password" :rules="passwordRules" :counter="10" label="Senha" required>
+                  <v-text-field 
+                    v-model="password"
+                    :rules="passwordRules"
+                    counter
+                    label="Senha"
+                    prepend-icon="lock"
+                    :append-icon="show ? 'visibility' : 'visibility_off'"
+                    :type="show ? 'text' : 'password'"
+                    hint="Digite sua senha"
+                    required
+                    @click:append="show = !show"
+                    >
                   </v-text-field>
                 </v-card-text>
                 <v-card-actions>
@@ -31,6 +50,8 @@
                   </v-layout>
                 </v-card-actions>
               </v-form>
+              <br/>
+              <br/>
             </v-card>
           </v-layout>
         </v-flex>
@@ -49,6 +70,7 @@ export default {
   name: "Login",
   data: () => ({
     valid: true,
+    show: false,
     password: '',
     passwordRules: [
       v => !!v || 'Senha é obrigatória',
