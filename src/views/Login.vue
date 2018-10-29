@@ -21,6 +21,7 @@
                     :rules="emailRules"
                     label="E-mail"
                     prepend-icon="alternate_email"
+                    browser-autocomplete="username"
                     required
                     >
                   </v-text-field>
@@ -33,8 +34,9 @@
                     :append-icon="show ? 'visibility' : 'visibility_off'"
                     :type="show ? 'text' : 'password'"
                     hint="Digite sua senha"
-                    required
                     @click:append="show = !show"
+                    browser-autocomplete="current-password"
+                    required
                     >
                   </v-text-field>
                 </v-card-text>
