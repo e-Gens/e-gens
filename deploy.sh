@@ -11,20 +11,21 @@
 # -o => opção ssh - sem validação restrita por chaves
 # --------------------------------------------------
 
-SCRIPT="progress;
-rm $REMOTE_ROOT/$LOCAL_ROOT/$FILE;
-rm $REMOTE_ROOT/$LOCAL_ROOT/css/$FILE;
-rm $REMOTE_ROOT/$LOCAL_ROOT/js/$FILE;
-rm $REMOTE_ROOT/$LOCAL_ROOT/img/$FILE;
-progress;
-put -r $LOCAL_ROOT $REMOTE_ROOT;
-bye;
-"
-if [ "${TRAVIS_BRANCH}" = "master" ] && [ !${TRAVIS_PULL_REQUEST} ]
+
+
+if [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = false ]
 # Deploy apenas no [master]
 then
 sshpass -p $FTP_PASSWD sftp -P $FTP_PORT -v -o StrictHostKeyChecking=no $FTP_USER@$FTP_HOST <<END_SCRIPT
-$SCRIPT 
+progress
+rm $REMOTE_ROOT/$LOCAL_ROOT/$FILE
+rm $REMOTE_ROOT/$LOCAL_ROOT/css/$FILE
+rm $REMOTE_ROOT/$LOCAL_ROOT/js/$FILE
+rm $REMOTE_ROOT/$LOCAL_ROOT/img/$FILE
+progress
+put -r $LOCAL_ROOT $REMOTE_ROOT
+progress
+bye
 END_SCRIPT
 fi
 exit 0
