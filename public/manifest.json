@@ -1,5 +1,5 @@
 {
-  "name": "e-gens",
+  "name": "e-Gens - Gestão do Ensino",
   "short_name": "e-gens",
   "icons": [
     {
@@ -44,7 +44,6 @@
     }
   ],
   "start_url": "/index.html",
-  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#4DBA87"
 }
