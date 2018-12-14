@@ -16,6 +16,14 @@
               <v-form ref="form" v-model="valid" autocomplete="on">
                 <v-card-text>
                   <v-text-field
+                    v-model="name"
+                    :rules="nameRules"
+                    label="Nome"
+                    prepend-icon="account_circle"
+                    browser-autocomplete="name"
+                    required
+                  ></v-text-field>
+                  <v-text-field
                     v-model="email"
                     :rules="emailRules"
                     label="E-mail"
@@ -36,15 +44,28 @@
                     browser-autocomplete="current-password"
                     required
                   ></v-text-field>
+                  <v-text-field
+                    v-model="password_confirmation"
+                    :rules="passwordRules"
+                    counter
+                    label="Confirme a senha"
+                    prepend-icon="lock"
+                    :append-icon="show ? 'visibility' : 'visibility_off'"
+                    :type="show ? 'text' : 'password'"
+                    hint="Digite sua senha"
+                    @click:append="show = !show"
+                    browser-autocomplete="current-password"
+                    required
+                  ></v-text-field>
                 </v-card-text>
                 <v-card-actions>
                   <v-layout align-space-around justify-center column fill-height>
                     <v-layout xs12 row>
-                      <v-btn flat color="green" :disabled="!valid" @click="submit" block>login</v-btn>
+                      <v-btn flat color="blue" :disabled="!valid" @click="submit" block>Cadastrar</v-btn>
                       <v-btn flat color="grey" @click="clear" block>limpar</v-btn>
                     </v-layout>
                     <v-flex xs12>
-                      <v-btn flat color="blue" to="/cadastro" block>cadastrar usuário</v-btn>
+                      <v-btn flat color="blue" to="/login" block>Já tenho uma conta.</v-btn>
                     </v-flex>
                   </v-layout>
                 </v-card-actions>
@@ -66,21 +87,27 @@
 import LoginTemplate from "@/template/LoginTemplate"
 
 export default {
-  name: "Login",
+  name: "Cadastro",
   data: () => ({
     valid: true,
     show: false,
+    name: '',
+    nameRules: [
+      v => !!v || 'Nome é obrigatório',
+      v => (v && v.length >= 5) || 'Nome tem que ser maior que 5 caracteres'
+    ],
     password: '',
+    password_confirmation: '',
     passwordRules: [
       v => !!v || 'Senha é obrigatória',
-      v => (v && v.length <= 10) || 'Senha tem que ser menor que 10 caracteres'
+      v => (v && v.length >= 6) || 'Senha tem que ter no mínimo 6 caracteres'
     ],
     email: '',
     emailRules: [
       v => !!v || 'E-mail é obrigatório',
       v => /.+@.+/.test(v) || 'Você precisa de um e-mail válido.'
     ],
-    imageLogin: require('@/assets/img/logo/logo-login.png')
+    imageLogin: require('@/assets/img/logo/logo-cadastro.png')
   }),
   computed: {
     showImage() {
@@ -96,21 +123,28 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        this.$http.post('/api/login', {
+        // Native form submission is not yet supported
+        // console.log('Axios aqui!')
+        this.$http.post('/api/usuario/create', {
+          name: this.name,
           email: this.email,
-          password: this.password
+          password: this.password,
+          password_confirmation: this.password_confirmation
         })
           .then(response => {
-            if (response.data.status == true && response.data.user.token) {
+            //console.log(response)
+            if (response.data.user.token) {
               sessionStorage.setItem('usuario', JSON.stringify(response.data.user))
+              alert('Cadastro realizado com sucesso!')
               this.$router.push('/')
             } else if (response.data.status == false) {
-              alert('Login ou senha incorretos')
+              //console.log('Login não existe!')
+              alert('Erro no servidor, tente novamente mais tarde.')
             } else {
+              //console.log('Erros de validação')
               let erros = '';
               for (let erro of Object.values(response.data)) {
                 erros += erro + " \n";
-
               }
               alert(erros);
             }
